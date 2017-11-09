@@ -91,7 +91,7 @@ getServerTime((serverTime) => {
 
 在写倒计时的时候遇到了一个坑这里记录一下。
 
-**千万别在倒计时结束的时候请求接口**。会让服务端瞬间 QPS 峰值达到非常高。
+**千万别在倒计时结束的时候请求接  口**。会让服务端瞬间 QPS 峰值达到非常高。
 
 ![](https://img.alicdn.com/tfs/TB1LBzjOpXXXXcnXpXXXXXXXXXX-154-71.png)
 
