@@ -2,7 +2,7 @@
 layout: post
 title:  "兼容"
 categories: jianrong
-tags:  countdown jianrong
+tags:  countdown jianrong  JS
 author: redHeart
 ---
 
