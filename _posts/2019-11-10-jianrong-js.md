@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jianrong"
+title:  "兼容"
 categories: jianrong
 tags:  countdown jianrong
 author: redHeart
@@ -9,14 +9,14 @@ author: redHeart
 * content
 {:toc}
 
-js 兼容
+兼容总结
 
 
 
 
+## JS
 
-## 高度
-
+### 高度
 
 ```js
 
@@ -43,6 +43,8 @@ window.pageYOffset：100
 document.documentElement.scrollTop:0
 document.body.scrollTop：100
 
-var scrollTop = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
 ```
+
+##CSS
