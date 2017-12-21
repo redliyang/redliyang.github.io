@@ -39,9 +39,6 @@ mathjax: true
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-![][1]
-
-[1]: http://latex.codecogs.com/gif.latex?\prod%20\(n_{i}\)+1
 
 # 我戒色2年3个月的体悟。附：戒色的十个阶段
 
