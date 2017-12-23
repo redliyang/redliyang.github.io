@@ -1,12 +1,13 @@
 ---
 layout: post
 title:  "戒色笔记"
-date:   2015-02-10 15:14:54
-categories: jekyll
-tags: jekyll
-excerpt: 这是我戒色的学习笔记
-mathjax: true
+categories: jieSe
+tags: jekyll jieSe
+author: redHeart
 ---
+
+* content
+{:toc}
 
 ![](http://reso3.yiihuu.com/img_1088102.jpg)
 
