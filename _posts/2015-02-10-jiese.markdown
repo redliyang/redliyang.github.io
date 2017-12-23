@@ -2200,3 +2200,11 @@ author: redHeart
 1. 永远不要质疑你自己戒淫的决定。你知道你的决定是正确的。
 
 <font color=red size=72>现在你终于可以说：**"耶！我是个非撸管者！"**</font>
+
+<font face="黑体">我是黑体字</font>
+
+<font face="微软雅黑">我是微软雅黑</font>
+<font face="STCAIYUN">我是华文彩云</font>
+<font color=#0099ff size=12 face="黑体">黑体</font>
+<font color=#00ffff size=3>null</font>
+<font color=gray size=5>gray</font>
