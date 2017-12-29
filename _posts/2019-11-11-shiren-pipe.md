@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title:  "识人流"
+title:  "识心流"
 categories: Link
 tags:  countdown Link
 author: redHeart
@@ -15,10 +15,15 @@ author: redHeart
 
 
 
+# 外在
 
-# 出身
+## 穿衣打扮
 
-# 人心
+## 面相
+
+## 出身
+
+# 内在
 
 ## 看他平时交往亲近的人，
 
