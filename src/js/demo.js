@@ -1,1 +1,0 @@
-var helloWord = null;
