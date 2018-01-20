@@ -15,20 +15,101 @@
         .dee {
             width: 100px;
             height: 100px;
-            background-color: #000099;
+            margin: 10px;
+            background-color: #ff009f;
+            color: red;
         }
     </style>
 </head>
 
 <body>
     <h1>李阳，加油，我有反刍，脑图，和老牌逻辑区，我不会是个废人！</h1>
-    <div class="dee"></div>
+    <p>我是第1个p元素</p>
+    <p>我是第2个p元素</p>
+    <p id="22">我是第3个p元素</p>
+    <div class="dee"></div><div class="dee"></div><div class="dee"></div><div class="dee"></div>
 </body>
 
 </html>
-<script src="js/jquery-1.12.2.js"></script>
+<script src="../js/jquery-1.12.2.js"></script>
 <script>
-    
+    window.onload = function(){
+        // var divArr = demo.getEle.tag('p');
+        // for (const key in divArr) {
+        //     if (divArr.hasOwnProperty(key)) {
+        //         const element = divArr[key];
+        //         console.log(element);
+        //         element.style.border = '1px solid red';
+        //     }
+        // }
+        var demo = {
+            getEle: {
+                tag: function (ele) {
+                    return document.getElementsByTagName(ele);
+                },
+                id: function (ele) {
+                    return document.getElementById(ele);
+                }
+            },
+            setCSS: {
+                border: function (ele) {
+                    for (const iterator of ele) {
+                        iterator.style.border = '1px solid red';
+                    }
+                }
+            }
+        }
+        // console.log(demo.getEle.tag('p'));
+        // var pArr = demo.getEle.tag('p');
+        demo.setCSS.border(demo.getEle.tag('p'));
+
+        // for (var j = 0; j < elements.length; j++) {
+        //     var ele = elements[j];
+        //     // console.log(ele);
+        //     ele.style.border = "1px solid red";
+        // }
+        // for (let i = 0; i < divArr.length; i++) {
+        //     const element = divArr[i];
+        // }
+    }
+
+    //  window.onload = function () {
+
+    //         var divs = itcastQuery.tag("div");
+    //         itcastQuery.setStyle(divs);
+
+    //         var ps = itcastQuery.tag("p");
+    //         itcastQuery.setStyle(ps);
+    //     }
 
 
+
+
+    //     var itcastQuery = {
+    //         //获取dom元素的方法们
+    //         getEle: {
+    //             tag: function (tagName) {
+    //                 return document.getElementsByTagName(tagName);
+    //             },
+    //             id: function (id) {
+    //                 return document.getElementById(id);
+    //             }
+    //             //通过classname获取元素的方法
+    //             //....
+    //         },
+    //         //设置样式的方法们
+    //         setCss: {
+    //             setStyle: function (elements) {
+    //                 for (var j = 0; j < elements.length; j++) {
+    //                     var ele = elements[j];
+    //                     ele.style.border = "1px solid red";
+    //                 }
+    //             },
+    //             css: function (option) { },
+    //             addClass: function () { },
+    //             //..
+    //         }
+    //         //事件处理模块
+
+    //     }
 </script>

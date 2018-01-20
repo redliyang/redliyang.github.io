@@ -101,7 +101,15 @@ gulp.task('html', function () {
         .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task("script", function () {
+    gulp.src(['src/js/*.js'])
+        .pipe(changed('dist/js', { hasChanged: changed.compareSha1Digest }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task('serve', function () {
+    gulp.start('script','html');
     browserSync.init({
         port: 2017,
         server: {
