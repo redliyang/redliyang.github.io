@@ -8,15 +8,15 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),//检查改变状态  
     sourcemaps = require('gulp-sourcemaps'),
     less = require('gulp-less')//压缩合并less  
-    del = require('del')
-    browserSync = require("browser-sync").create();//浏览器实时刷新  
+del = require('del')
+browserSync = require("browser-sync").create();//浏览器实时刷新  
 
-删除dist下的所有文件  
+//删除dist下的所有文件  
 gulp.task('delete', function (cb) {
     return del(['dist/*', '!dist/images'], cb);
 })
 
-压缩html  
+//压缩html  
 gulp.task('html', function () {
     var options = {
         removeComments: true,//清除HTML注释  
@@ -33,16 +33,16 @@ gulp.task('html', function () {
         .pipe(browserSync.reload({ stream: true }));
 });
 
-实时编译less  
-gulp.task('less', function () {
-    gulp.src(['./src/less/*.less']) //多个文件以数组形式传入  
-        .pipe(changed('dist/css', { hasChanged: changed.compareSha1Digest }))
-        .pipe(less())//编译less文件  
-        .pipe(concat('index.css'))//合并之后生成index.css  
-        .pipe(cleanCSS())//压缩新生成的css  
-        .pipe(gulp.dest('dist/css'))//将会在css下生成main.css  
-        .pipe(browserSync.reload({ stream: true }));
-});
+//实时编译less  
+// gulp.task('less', function () {
+//     gulp.src(['./src/less/*.less']) //多个文件以数组形式传入  
+//         .pipe(changed('dist/css', { hasChanged: changed.compareSha1Digest }))
+//         .pipe(less())//编译less文件  
+//         .pipe(concat('index.css'))//合并之后生成index.css  
+//         .pipe(cleanCSS())//压缩新生成的css  
+//         .pipe(gulp.dest('dist/css'))//将会在css下生成main.css  
+//         .pipe(browserSync.reload({ stream: true }));
+// });
 
 gulp.task('less', function () {
     gulp.src(['./src/less/*.less']) //该任务针对的文件
@@ -55,7 +55,7 @@ gulp.task('less', function () {
         .pipe(browserSync.reload({ stream: true }));
 });
 
-压缩js  
+//压缩js  
 gulp.task("script", function () {
     gulp.src(['src/js/*.js'])
         .pipe(changed('dist/js', { hasChanged: changed.compareSha1Digest }))
@@ -65,7 +65,7 @@ gulp.task("script", function () {
         .pipe(browserSync.reload({ stream: true }));
 });
 
-压缩图片  
+// 压缩图片  
 gulp.task('images', function () {
     gulp.src('./src/images/*.*')
         .pipe(changed('dist/images', { hasChanged: changed.compareSha1Digest }))
@@ -78,7 +78,7 @@ gulp.task('images', function () {
         .pipe(browserSync.reload({ stream: true }));
 });
 
-启动热更新  
+//启动热更新  
 gulp.task('serve', ['delete'], function () {
     gulp.start('script', 'less', 'html');
     browserSync.init({
