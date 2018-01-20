@@ -2,8 +2,9 @@ _site
 .sass-cache
 .jekyll-metadata
 .vscode
+.project
 .idea
 .DS_Store
-_posts/2017-11-9-html.md
-_posts/2017-11-9-html.md
-_posts/2017-11-9-html.md
+/node_modules/
+/dist/
+package-lock.json
