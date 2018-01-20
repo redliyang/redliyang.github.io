@@ -12,18 +12,12 @@
 </body>
 </html>
 <script>
-    var arr = [1,2,4];
-    var obj = {
-        name: 'liYang',
-        sex: 'man'
+    var str = {
+        name : 'liyang',
+        sex : 'man'
     };
-   
-    for(var k in obj){
-        console.log(obj[k]);
-    }
-    var test = 4;
-    console.log(arr.indexOf(test));
-    console.log('-----------');
-    var date = new Function();
-    console.log(typeof (new Date()));
+    str['name'] = '1';
+    str['age'] = '25';
+     console.log(str['name']);
+     console.log(str.age);
 </script>
