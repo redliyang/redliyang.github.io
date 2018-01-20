@@ -80,7 +80,7 @@ gulp.task('images', function () {
 
 //启动热更新  
 gulp.task('serve', ['delete'], function () {
-    gulp.start('script', 'less', 'html');
+    gulp.start('script', 'less', 'html','images');
     browserSync.init({
         port: 2017,
         server: {
