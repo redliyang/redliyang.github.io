@@ -30,5 +30,4 @@ var sre = 'asdas';
 console.log(typeof sre); 
 
 console.log(sre.slice(1, 3)); 
-console.log(sre);
-console.log(sre.split(1, 3)); console.log(typeof sre.split(1, 3));
+console.log(typeof sre); 
