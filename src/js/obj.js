@@ -14,34 +14,21 @@ Marray.prototype = {
     }
 }
 
-function Person() {
-    this.name = "王九"
-}
-Person.prototype = new String();
-Person.prototype.constructor = Person;
-Person.prototype.say = function () {
-    console.log('11');
-};
+var date = new Date();
+console.log(typeof date.getDate());
 
-var p = new Person();
-console.log(p);
-p.say();
+var math = new RegExp();
+console.log(math);
 
-function PersonPP() {
-    this.name = "sad"
-}
-PersonPP.prototype = new String();;
-PersonPP.prototype.say = function () {
-    console.log('22');
-};
+var aa = -1;
+console.log(Math.abs(aa));
 
+var str = new String();
+console.log(typeof str);
 
+var sre = 'asdas';
+console.log(typeof sre); 
 
-var p23 = new PersonPP();
-console.log(p23);
-p23.say();
-
-
-var p2 = new Person();
-console.log(p2);
-p2.say();
+console.log(sre.slice(1, 3)); 
+console.log(sre);
+console.log(sre.split(1, 3)); console.log(typeof sre.split(1, 3));
