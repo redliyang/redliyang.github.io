@@ -14,28 +14,11 @@ Marray.prototype = {
     }
 }
 
-// console.log(arr);
-// console.log(arr.splice(1, 3, 'k', 'm'));
+       function Person(){
+           this.name = "王九"
+       }
 
-var o = {
-    name : '44'
-};
+       Person.prototype.name = "张三";
 
-// console.log(Object.create(o));
-
-function create(o) {
-    if (Object.create) {
-        return Object.create(o);
-    } else {
-        function F() { }
-        F.prototype = o;
-        return new F();
-    }
-}
-console.log(create(o));
-// var p = new Marray();
-
-// for(var k in p){
-// }
-// o.__proto__ = p;
-// console.log(o);
+       var p = new Person();
+       console.log(p.valueOf());
