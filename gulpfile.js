@@ -96,7 +96,7 @@ gulp.task('html', function () {
     };
     gulp.src('src/*.html')
         .pipe(changed('dist', { hasChanged: changed.compareSha1Digest }))
-        .pipe(htmlMin(options))
+        // .pipe(htmlMin(options))
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({ stream: true }));
 });
