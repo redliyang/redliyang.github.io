@@ -17,14 +17,31 @@ Marray.prototype = {
 function Person() {
     this.name = "王九"
 }
-
-function PersonPP() {
-    this.name = "王九"
-}
-
 Person.prototype = new String();
-Person.prototype.constructor = Person();
-Person.prototype = new String();
+Person.prototype.constructor = Person;
+Person.prototype.say = function () {
+    console.log('11');
+};
 
 var p = new Person();
 console.log(p);
+p.say();
+
+function PersonPP() {
+    this.name = "sad"
+}
+PersonPP.prototype = new String();;
+PersonPP.prototype.say = function () {
+    console.log('22');
+};
+
+
+
+var p23 = new PersonPP();
+console.log(p23);
+p23.say();
+
+
+var p2 = new Person();
+console.log(p2);
+p2.say();
