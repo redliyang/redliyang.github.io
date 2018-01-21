@@ -35,5 +35,5 @@ var foo1 = new Function('a',
 'c',
 'var res = a > b ? a : b;res = res > c ? res : c;return res;'
 )
-// console.log(foo(1, 2, 3));
+console.log(foo(1, 2, 3));
 console.log(foo1(2,3,5));
