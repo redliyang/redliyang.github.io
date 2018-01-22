@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    htmlMin = require('gulp-htmlmin'),//压缩html  
     changed = require('gulp-changed'),//检查改变状态  
     browserSync = require("browser-sync").create();//浏览器实时刷新  
 
@@ -86,17 +85,8 @@ var gulp = require('gulp'),
 // });
 
 gulp.task('html', function () {
-    var options = {
-        removeComments: true,//清除HTML注释  
-        collapseWhitespace: true,//压缩HTML  
-        removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"  
-        removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"  
-        minifyJS: true,//压缩页面JS  
-        minifyCSS: true//压缩页面CSS  
-    };
     gulp.src('src/*.html')
         .pipe(changed('dist', { hasChanged: changed.compareSha1Digest }))
-        // .pipe(htmlMin(options))
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({ stream: true }));
 });
