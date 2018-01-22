@@ -28,3 +28,18 @@ console.log(typeof str);
 
 var sre = 'asdas';
 console.log(typeof sre); 
+
+var songList = [
+    {
+        songName: "情书",
+        singer: "张学友"
+    },
+    {
+        songName: "演员",
+        singer: "薛小谦"
+    },
+    {
+        songName: "李白",
+        singer: "李荣浩"
+    }
+];
