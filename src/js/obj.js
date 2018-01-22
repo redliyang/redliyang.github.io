@@ -44,9 +44,23 @@ function test() {
 // test();
 
 console.log(document.body.childNodes);
-
+// localName
+// :
+// "script"
+// nodeName
+// :
+// "SCRIPT"
 var arr = document.body.childNodes;
-for (let i = 0; i < arr.length; i++) {
-    const ele = arr[i];
-    console.log(ele.nodeType);
+
+function findChild(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const ele = arr[i];
+        if (ele.nodeType == 1 && ele.nodeName != "SCRIPT") {
+            console.log(ele.nodeType);
+            ele.style.border = '1px solid red';
+            findChild(ele.childNodes);
+        }
+    }
 }
+
+findChild(arr);
