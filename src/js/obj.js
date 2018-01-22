@@ -14,21 +14,6 @@ Marray.prototype = {
     }
 }
 
-var date = new Date();
-console.log(typeof date.getDate());
-
-var math = new RegExp();
-console.log(math);
-
-var aa = -1;
-console.log(Math.abs(aa));
-
-var str = new String();
-console.log(typeof str);
-
-var sre = 'asdas';
-console.log(typeof sre); 
-
 var songList = [
     {
         songName: "情书",
@@ -43,3 +28,25 @@ var songList = [
         singer: "李荣浩"
     }
 ];
+
+
+console.log(songList);
+for (const key in songList) {
+    if (songList.hasOwnProperty(key)) {
+        const element = songList[key];
+        console.log(element);
+    }
+}
+
+for
+
+songList.push({
+    songName: "sad",
+    singer: "dd"
+})
+
+// songList.splice(1, 1, {
+//     songName: "sad",
+//     singer: "dd"
+// })
+
