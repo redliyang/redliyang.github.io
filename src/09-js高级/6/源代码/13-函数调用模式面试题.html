@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //1
+//        var age = 38;
+//        var obj = {
+//            age: 18,
+//            getAge: function() {
+//                console.log(this.age);
+//            }
+//        };
+//
+////        var a = obj.getAge();  //18
+//        var getAge = obj.getAge;
+//        getAge();
+
+
+        //2
+//        var age = 38;
+//        var obj = {
+//            age: 18,
+//            getAge: function() {
+//
+//                console.log(this.age);
+//
+//                function foo() {
+//                    console.log(this.age); //
+//                }
+//                foo();
+//            }
+//        };
+//
+//        obj.getAge();
+
+        //3
+//
+        var length = 10;
+        function fn(){
+            console.log(this.length);
+        }
+
+        var obj = {
+            length: 5,
+            method: function (fn) {
+
+                fn();   //  10
+
+                arguments[0](); //2
+
+
+            }
+        };
+
+        obj.method(fn, 123, 456, 789);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 3000px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.lazyload.min.js"></script>
+    <script>
+        $(function () {
+            //懒加载调用
+
+            //使用插件：1.引包。(必须在jquery之下)   2.通过调用方法实现功能，而参数的不同，功能也可能不同。
+            $("img.lazy").lazyload();
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <!--<img src="images/02.jpg" alt=""/>-->
+    <img class="lazy" data-original="images/02.jpg" width="640" height="480">
+</body>
+</html>

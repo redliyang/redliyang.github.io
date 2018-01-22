@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {name:"张学友"};
+        var o = Object.create(obj);
+
+        function F(){
+
+        }
+        F.prototype = obj;
+        var o  =new F();
+
+
+        function Person(){
+
+        }
+        Person.prototype = obj;
+        var p = new Person();
+
+        var p = Object.create(obj);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="checkDemo.css"/>
+</head>
+
+<body>
+<div class="wrap">
+    <div>
+        <input type="button" value="添加数据" id="j_btnAddData" class="btnAdd"/>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <!-- <th><input type="checkbox" id="j_cbAll" /></th> -->
+            <th>课程名称</th>
+            <th>所属学院</th>
+            <th>已学会</th>
+        </tr>
+        </thead>
+        <tbody id="j_tb">
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>JavaScript</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>css</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>html</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        <tr>
+            <!-- <td><input type="checkbox"/></td> -->
+            <td>jQuery</td>
+            <td>传智播客-前端与移动开发学院</td>
+            <td><a href="javascrip:;" class="get">GET</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="j_mask" class="mask"></div>
+<div id="j_formAdd" class="form-add">
+    <div class="form-add-title">
+        <span>添加数据</span>
+
+        <div id="j_hideFormAdd">x</div>
+    </div>
+    <div class="form-item">
+        <label class="lb" for="j_txtLesson">课程名称：</label>
+        <input class="txt" type="text" id="j_txtLesson" placeholder="请输入课程名称">
+    </div>
+    <div class="form-item">
+        <label class="lb" for="j_txtBelSch">所属学院：</label>
+        <input class="txt" type="text" id="j_txtBelSch" value="传智播客-前端与移动开发学院">
+    </div>
+    <div class="form-submit">
+        <input type="button" value="添加" id="j_btnAdd">
+    </div>
+</div>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+
+    $(function () {
+        var $tb = $("#j_tb");
+        // GET单行
+        $("a.get").click(function () {
+            // 删除当前行
+            delData(this);
+        });
+
+        // 展示添加窗口
+        $("#j_btnAddData").click(function () {
+            $("#j_mask").show();
+            $("#j_formAdd").show();
+        });
+
+        // 添加
+        $("#j_btnAdd").click(function () {
+            var txtLesson = $("#j_txtLesson").val();
+            var txtBelSch = $("#j_txtBelSch").val();
+
+            // 判断是否输入了内容
+            if (txtLesson === "") {
+                alert("请出入课程名称");
+
+                return;
+            }
+
+            var trHml =
+                    "<tr><td>" + txtLesson + "</td>" + "<td>" + txtBelSch + "</td>" + "<td><a href='javascrip:;' class='get' onclick='delData(this)'>GET</a></td>" + "</tr>";
+
+            $tb.append(trHml);
+
+            hideFormAddSection();
+        });
+
+        // 关闭按钮
+        $("#j_hideFormAdd").click(function () {
+            hideFormAddSection();
+        });
+    });
+
+    // 删除当前行
+    function delData(e) {
+        $(e).parent("td").parent("tr").remove();
+    }
+
+    // 隐藏添加区域并重置值
+    function hideFormAddSection() {
+        $("#j_mask").hide();
+        $("#j_formAdd").hide();
+
+        $("#j_txtLesson").val("");
+        $("#j_txtBelSch").val("传智播客-前端与移动开发学院");
+    }
+
+</script>
+</body>
+
+</html>

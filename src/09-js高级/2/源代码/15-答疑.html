@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(){
+
+        }
+
+        var x = {
+            brand:"laosilaisi"
+        };
+
+        Person.prototype.car = x;
+
+        var p = new Person();
+
+        console.log(p.car.brand);
+
+        //获取属性的操作，满足属性搜索的条件
+        var temp = p.car;
+
+        //只有设置属性的操作，才不会去管原型中到底有没有该属性
+        //只会在当前对象中找该属性，如果有 修改  如果没有 新增
+
+        temp.brand = "Biyadi";
+
+        var p1 = new Person();
+
+        console.log(p1.car.brand);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+
+        //原生js
+//        window.onload = function () {
+//            var btn = document.getElementsByTagName("button")[0];
+//            var divArr = document.getElementsByTagName("div");
+//
+//            btn.onclick = function () {
+//                for(var i=0;i<divArr.length;i++){
+//                    divArr[i].style.display = "block";
+//                    divArr[i].innerHTML = "明日中秋！";
+//                }
+//            }
+//        }
+
+        //jquery版
+        $(document).ready(function () {
+            //获取元素
+            var jQbtn = $("button");//根据标签名获取元素
+            var jQdiv = $("div");//根据标签名获取元素
+            //绑定事件
+            jQbtn.click(function () {
+                //事件驱动程序
+//                jQdiv.show(1000);//显示盒子。
+//                jQdiv.html("tomorrow中秋！");//设置内容
+                jQdiv.show(3000).html(1111);
+                //1.链式编程。  2.隐式迭代。
+
+            });//事件绑定是通过方法绑定的。
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <button>显示盒子和设置内容</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+</body>
+</html>

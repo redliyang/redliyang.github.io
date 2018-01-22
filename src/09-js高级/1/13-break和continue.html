@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //求1-100之间所有奇数的和，要求使用continue
+    var sum = 0;
+
+    for(var i = 1; i <= 100; i++){
+        //找到所有的奇数，做累加
+        if(i % 2 == 0 ){
+            continue;
+        }else{
+            sum += i;
+        }
+    }
+
+    //continue是用来干什么的？
+    //跳出本次循环 继续下次循环，continue下面的代码不再执行
+
+    //break 是用来干什么的？
+    //终止循环 break后面的代码执行吗？
+</script>
+</body>
+</html>

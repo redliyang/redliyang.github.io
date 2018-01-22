@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        //入口函数
+        jQuery(function () {
+            var jqLi = $("li");
+//            console.log(jqLi);
+//            console.log(jqLi.length);
+            for(var i=0;i<jqLi.length;i++){
+                if(i%2===0){
+                    //jquery对象，转换成了js对象。
+                    jqLi[i].style.backgroundColor = "red";
+                }else{
+                    jqLi.get(i).style.backgroundColor = "yellow";
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+</ul>
+</body>
+</html>

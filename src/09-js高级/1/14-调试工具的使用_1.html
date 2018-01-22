@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        var a = 10;
+        //1.获取div
+        //2.绑定事件
+        //3.书写事件驱动程序
+
+        var count = 0;
+
+        $(function () {
+            $("div").click(function () {
+                count++;
+                //设置给div内容
+                $(this).html(count);
+            });
+        })
+
+//        function test() {
+////            alert("我是一个测试信息");
+//
+//            console.log("测试信息");
+//
+//            console.log("第二个测试信息");
+//
+//        }
+//
+//        var b = 100;
+//
+//        test();
+//
+//        var a = 10;
+
+        //逐过程运行，如果遇到函数调用，会直接执行完函数，拿到返回值，不会跑到函数中去一步步的执行代码
+
+
+//        var obj = {
+//            name : '头发泡在稀饭里',
+//            age : 50
+//        };
+//
+//        obj.sayHello();
+
+
+        for (var i = 0 ; i <= 1000; i++){
+
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+
+<div></div>
+</body>
+</html>

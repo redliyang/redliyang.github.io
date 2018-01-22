@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.闭包练习
+        //setTimeout中回调函数的执行时间
+        //setTimeout的第二个参数，至少在第二个参数这么长的时间后执行
+
+//        for(var i=0;i<10;i++){
+//            function foo(j){
+//                return function () {
+//                    console.log(j);
+//                }
+//            }
+//            var f = foo(i);
+//
+//            setTimeout(f, 0)
+//        }
+//
+//        for (var i = 0; i < divs.length; i++) {
+//            var div = divs[i];
+//            div.onclick = function(j){
+//                return function () {
+//                    alert(j)
+//                }
+//            }(i)
+//        }
+
+        /*
+         *
+         * 好多好多代码
+         *
+         * */
+//        console.log("for循环已经执行完毕");
+
+        //2.斐波那契数列的性能问题
+        //1.首先定义一个数组
+        //2.在需要计算斐波那契数字的时候
+        //3.先直接去数组中取，如果没有取到
+        //4.再进行计算，然后存进数组中
+
+        //3.jQuery的缓存实现
+//        function createCache(){
+//            var cache = {};
+//            var index = [];
+//            function cache(key, value){
+//                if(value !== undefined){
+//                    cache[key] = value;
+//                    index.push(key);
+//                    if(index.length > 10){
+//                        var k = index.shift();
+//                        delete cache[k];
+//                    }
+//                }
+//                return cache[key];
+//            }
+//            return cache;
+//        }
+
+        //4.沙箱模式
+//        (function (w) {
+//            //变量的定义
+//
+//            //逻辑代码
+//
+//            //如果需要，使用window向外界暴露接口
+//            window == w
+//        })(window)
+
+        //5.函数的四种调用模式
+
+        //1.函数调用模式
+            //this---->window
+        //2.方法调用模式
+            //this---->调用方法的对象
+        //3.构造函数调用模式
+            //this---->new 创建出来的对象
+
+//        function test(){
+//            console.log(this);
+//        }
+
+
+        //4.上下文调用模式
+        //call apply
+
+        function foo(){
+            console.log(this);
+        }
+
+        var obj = {
+            age:"zs",
+            sayHello:function () {
+                console.log(this.age);
+            }
+        };
+
+
+
+//        obj.sayHello();
+        obj.sayHello.call(null);
+        obj.sayHello.apply(null);
+
+//        函数.apply(obj,数组)
+//        函数(数组[0],数组[1],数组[2],数组[3],数组[4])
+
+//        arr.push([1,2,3])
+//        arr.push.apply(arr,[1,2,3])
+//        arr.push(1,2,3)
+
+
+
+//        foo.call(obj);
+//        foo.apply(obj);
+//
+//        foo.call(null);
+//        foo.call(window);
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

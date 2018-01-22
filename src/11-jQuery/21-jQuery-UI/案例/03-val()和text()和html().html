@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //val();   获取标签中的value属性的值。带有参数是赋值(类比js中的value属性)
+            alert($("input").val());
+            $("input").val("我是刚刚赋值的input内容")
+
+            //text();  获取双闭合标签中的文本值。（不识别标签）(类比innerText)
+            alert($("div").text());
+            $("div").text("<li>我是text赋值的</li>")
+
+            //html();  获取双闭合标签中的文本值。（识别标签）(类比innerHTML)
+            alert($("div").html());
+            $("div").html("<li>我是html赋值的</li>")
+        })
+    </script>
+</head>
+<body>
+<input type="text" value="我是input"/>
+<div>
+    <li>你好</li>
+</div>
+</body>
+</html>

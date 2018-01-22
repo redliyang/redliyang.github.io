@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>闭包 | JavaScript高级讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Sources/函数的四种调用模式.html" />
+    
+    
+    <link rel="prev" href="../Sources/作用域链.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.3"
+        data-chapter-title="闭包"
+        data-filepath="Sources/闭包.md"
+        data-basepath=".."
+        data-revision="Mon Oct 24 2016 01:31:56 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> JavaScript高级知识</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Sources/递归.html">
+            
+                
+                    <a href="../Sources/递归.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        递归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+            <span><b>1.2.</b> 词法作用域</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Sources/词法作用域.html">
+            
+                
+                    <a href="../Sources/词法作用域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        词法作用域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Sources/变量名提升.html">
+            
+                
+                    <a href="../Sources/变量名提升.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        变量名提升
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Sources/作用域链.html">
+            
+                
+                    <a href="../Sources/作用域链.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.3.</b>
+                        
+                        作用域链
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Sources/闭包.html">
+            
+                
+                    <a href="../Sources/闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Sources/函数的四种调用模式.html">
+            
+                
+                    <a href="../Sources/函数的四种调用模式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        函数的四种调用模式
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> 面向对象案例</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" >
+            
+            <span><b>2.1.</b> 歌曲列表管理</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+            <span><b>2.2.</b> Tab栏切换</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >JavaScript高级讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h2>
+<h3 id="&#x95ED;&#x5305;&#x7684;&#x6982;&#x5FF5;">&#x95ED;&#x5305;&#x7684;&#x6982;&#x5FF5;</h3>
+<p>&#x95ED;&#x5305;&#x4ECE;&#x5B57;&#x9762;&#x610F;&#x601D;&#x7406;&#x89E3;&#x5C31;&#x662F;&#x95ED;&#x5408;, &#x5305;&#x8D77;&#x6765;.</p>
+<p>&#x7B80;&#x5355;&#x7684;&#x6765;&#x8BF4;&#x95ED;&#x5305;&#x5C31;&#x662F;,<strong><em>&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x5C01;&#x95ED;&#x7684;&#x5BF9;&#x5916;&#x4E0D;&#x516C;&#x5F00;&#x7684;, &#x5305;&#x88F9;&#x7ED3;&#x6784;, &#x6216;&#x7A7A;&#x95F4;.</em></strong></p>
+<p>&#x5728;JavaScript&#x4E2D;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6784;&#x6210;&#x95ED;&#x5305;. &#x4E00;&#x822C;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x7684;&#x5C01;&#x95ED;&#x7ED3;&#x6784;, &#x5373;&#x5305;&#x88F9;&#x7684;&#x7279;&#x6027;, &#x540C;&#x65F6;&#x6839;&#x636E;&#x4F5C;&#x7528;&#x57DF;&#x89C4;&#x5219;, &#x53EA;&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x7684;&#x6570;&#x636E;, &#x5916;&#x90E8;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;, &#x5373;&#x5C01;&#x95ED;&#x7684;&#x5BF9;&#x5916;&#x4E0D;&#x516C;&#x5F00;&#x7684;&#x7279;&#x6027;. &#x56E0;&#x6B64;&#x8BF4;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6784;&#x6210;&#x95ED;&#x5305;.</p>
+<h3 id="&#x95ED;&#x5305;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;">&#x95ED;&#x5305;&#x8981;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;</h3>
+<ol>
+<li>&#x95ED;&#x5305;&#x5185;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x5141;&#x8BB8;&#x5916;&#x754C;&#x8BBF;&#x95EE;</li>
+<li>&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x95F4;&#x63A5;&#x8BBF;&#x95EE;&#x8BE5;&#x6570;&#x636E;</li>
+</ol>
+<p><strong>&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x6784;&#x6210;&#x95ED;&#x5305;, &#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x8BBF;&#x95EE;&#x5230;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;</strong></p>
+<p>&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x4E0B;&#x9762;&#x7684;&#x51FD;&#x6570;<code>foo</code>&#xFF0C;&#x5728;<code>foo</code>&#x5185;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;<code>num</code>&#xFF0C;&#x80FD;&#x5426;&#x5728;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x5230;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;<code>num</code>&#x5462;&#xFF1F;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> num = <span class="hljs-number">123</span>;
+    <span class="hljs-keyword">return</span> num;
+}
+
+<span class="hljs-keyword">var</span> res = foo();
+<span class="hljs-built_in">console</span>.log( res ); <span class="hljs-comment">// =&gt; 123</span>
+</code></pre>
+<p>&#x5206;&#x6790;&#xFF1A;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x786E;&#x5B9E;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;<code>num</code>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4F46;&#x662F;&#x80FD;&#x4E0D;&#x80FD;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#x5462;&#xFF1F;</p>
+<p>&#x4E0D;&#x80FD;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;&#x8BBF;&#x95EE;&#x90FD;&#x5F97;&#x91CD;&#x65B0;&#x8C03;&#x7528;&#x4E00;&#x6B21;<code>foo</code>&#x51FD;&#x6570;&#xFF0C;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>num = 123</code>&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x3002;</p>
+<h4 id="&#x89E3;&#x51B3;&#x601D;&#x8DEF;">&#x89E3;&#x51B3;&#x601D;&#x8DEF;</h4>
+<p>&#x51FD;&#x6570;&#x5185;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5728;&#x51FD;&#x6570;&#x5916;&#x88AB;&#x8BBF;&#x95EE;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4E0A;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x4E0B;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5982;&#x679C;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x4E0B;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x4E0A;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;&#x90A3;&#x4E48;&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;<code>foo</code>&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FD9;&#x4E2A;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4E2D;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;<code>foo</code>&#x4E2D;&#x7684;<code>num</code>&#x7684;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> num = <span class="hljs-built_in">Math</span>.random();    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> num;    
+    }
+    <span class="hljs-keyword">return</span> func;
+}
+
+
+<span class="hljs-keyword">var</span> f = foo();
+<span class="hljs-comment">// f&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;num&#xFF0C;&#x800C;&#x4E14;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;&#x4E5F;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;&#x65B0;&#x7684;num</span>
+<span class="hljs-keyword">var</span> res1 = f();
+<span class="hljs-keyword">var</span> res2 = f();
+</code></pre>
+<h3 id="&#x5982;&#x4F55;&#x83B7;&#x5F97;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x6570;&#x636E;">&#x5982;&#x4F55;&#x83B7;&#x5F97;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x6570;&#x636E;</h3>
+<p>&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x90A3;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x5BF9;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x51FD;&#x6570;&#x5185;&#x7684;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x5462;&#xFF1F;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> num1 = <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-keyword">var</span> num2 = <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x5305;&#x542B;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5185;&#x8FDB;&#x884C;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5728;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x64CD;&#x4F5C;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x5185;&#x7684;&#x591A;&#x4E2A;&#x53D8;&#x91CF;</span>
+    <span class="hljs-keyword">return</span> {
+        num1: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> num1;
+        },
+        num2: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> num2;
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x5982;&#x4F55;&#x5B8C;&#x6210;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x548C;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x6570;&#x636E;">&#x5982;&#x4F55;&#x5B8C;&#x6210;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x548C;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x6570;&#x636E;</h3>
+<p>&#x524D;&#x9762;&#x8BB2;&#x7684;&#x90FD;&#x662F;&#x5982;&#x4F55;&#x53BB;&#x83B7;&#x53D6;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5982;&#x4F55;&#x4FEE;&#x6539;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x4E5F;&#x662F;&#x4F7F;&#x7528;&#x5185;&#x90E8;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> num = <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-comment">//&#x5206;&#x522B;&#x5B9A;&#x4E49;get&#x548C;set&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-comment">//get_num&#x8D1F;&#x8D23;&#x83B7;&#x53D6;&#x6570;&#x636E;</span>
+        get_num: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{    
+            <span class="hljs-keyword">return</span> num;
+        },
+        <span class="hljs-comment">//set_num&#x8D1F;&#x8D23;&#x8BBE;&#x7F6E;&#x6570;&#x636E;</span>
+        set_num: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+            num = value;
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x95ED;&#x5305;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;">&#x95ED;&#x5305;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;</h3>
+<p><strong>&#x4E00;&#x822C;&#x95ED;&#x5305;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x8981;&#x60F3;&#x529E;&#x6CD5;&#x95F4;&#x63A5;&#x7684;&#x83B7;&#x5F97;&#x51FD;&#x6570;&#x5185;&#x6570;&#x636E;&#x7684;&#x4F7F;&#x7528;&#x6743;. &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x7684;&#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x51FA;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x578B;.</strong></p>
+<ol>
+<li>&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;, &#x51FD;&#x6570;&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x51FD;&#x6570;, &#x8FD4;&#x56DE;&#x65B0;&#x51FD;&#x6570;, &#x7528;&#x65B0;&#x51FD;&#x6570;&#x83B7;&#x5F97;&#x51FD;&#x6570;&#x5185;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;, &#x51FD;&#x6570;&#x5185;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;, &#x5BF9;&#x8C61;&#x4E2D;&#x7ED1;&#x5B9A;&#x591A;&#x4E2A;&#x51FD;&#x6570;( &#x65B9;&#x6CD5; ), &#x8FD4;&#x56DE;&#x5BF9;&#x8C61;, &#x5229;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x7684;&#x6570;&#x636E;</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Sources/作用域链.html" class="navigation navigation-prev " aria-label="Previous page: 作用域链"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Sources/函数的四种调用模式.html" class="navigation navigation-next " aria-label="Next page: 函数的四种调用模式"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

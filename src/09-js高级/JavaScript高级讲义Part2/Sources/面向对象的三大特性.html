@@ -1,0 +1,565 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>面向对象的三大特性 | JavaScript高级讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Sources/传统构造函数存在的问题.html" />
+    
+    
+    <link rel="prev" href="../Sources/构造函数.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.4"
+        data-chapter-title="面向对象的三大特性"
+        data-filepath="Sources/面向对象的三大特性.md"
+        data-basepath=".."
+        data-revision="Tue Oct 18 2016 23:20:06 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 面向对象</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Sources/面向对象概念介绍.html">
+            
+                
+                    <a href="../Sources/面向对象概念介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        面向对象概念介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Sources/面向对象编程举例.html">
+            
+                
+                    <a href="../Sources/面向对象编程举例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        面向对象编程举例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Sources/构造函数.html">
+            
+                
+                    <a href="../Sources/构造函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        构造函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Sources/面向对象的三大特性.html">
+            
+                
+                    <a href="../Sources/面向对象的三大特性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        面向对象的三大特性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+            <span><b>1.5.</b> 原型</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Sources/传统构造函数存在的问题.html">
+            
+                
+                    <a href="../Sources/传统构造函数存在的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                        传统构造函数存在的问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Sources/使用原型解决构造函数问题.html">
+            
+                
+                    <a href="../Sources/使用原型解决构造函数问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                        使用原型解决构造函数问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Sources/原型相关概念.html">
+            
+                
+                    <a href="../Sources/原型相关概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                        原型相关概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Sources/原型的使用.html">
+            
+                
+                    <a href="../Sources/原型的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.</b>
+                        
+                        原型的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Sources/proto.html">
+            
+                
+                    <a href="../Sources/proto.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.</b>
+                        
+                        \_\_proto\_\_
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Sources/继承的实现方式.html">
+            
+                
+                    <a href="../Sources/继承的实现方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        继承的实现方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Sources/原型三角绘制.html">
+            
+                
+                    <a href="../Sources/原型三角绘制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        原型三角绘制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Sources/属性搜索原则.html">
+            
+                
+                    <a href="../Sources/属性搜索原则.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        属性搜索原则
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+            <span><b>1.9.</b> 原型链</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="Sources/原型链结构.html">
+            
+                
+                    <a href="../Sources/原型链结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.1.</b>
+                        
+                        原型链结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="Sources/原型式继承.html">
+            
+                
+                    <a href="../Sources/原型式继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.2.</b>
+                        
+                        原型式继承
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+            <span><b>1.10.</b> 对象相关的其他知识</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="Sources/objectprototype成员介绍.html">
+            
+                
+                    <a href="../Sources/objectprototype成员介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.1.</b>
+                        
+                        Object.prototype成员介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="Sources/function.html">
+            
+                
+                    <a href="../Sources/function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.2.</b>
+                        
+                        Function
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="Sources/function的使用.html">
+            
+                
+                    <a href="../Sources/function的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.2.1.</b>
+                        
+                        Function的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="Sources/参数代码太长的问题.html">
+            
+                
+                    <a href="../Sources/参数代码太长的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.2.2.</b>
+                        
+                        参数代码太长的问题
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="Sources/静态成员和实例成员.html">
+            
+                
+                    <a href="../Sources/静态成员和实例成员.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.3.</b>
+                        
+                        静态成员和实例成员
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="Sources/arguments对象.html">
+            
+                
+                    <a href="../Sources/arguments对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.4.</b>
+                        
+                        arguments对象
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >JavaScript高级讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;">&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;</h1>
+<p>JavaScript&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;</p>
+<h2 id="1-&#x5C01;&#x88C5;&#x6027;">1. &#x5C01;&#x88C5;&#x6027;</h2>
+<p>&#x5BF9;&#x8C61;&#x662F;&#x5C06;&#x6570;&#x636E;&#x4E0E;&#x529F;&#x80FD;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;, &#x5373;&#x5C01;&#x88C5;</p>
+<ol>
+<li>js &#x5BF9;&#x8C61;&#x5C31;&#x662F; &#x952E;&#x503C;&#x5BF9;&#x7684;&#x96C6;&#x5408;<ul>
+<li>&#x952E;&#x503C;&#x5982;&#x679C;&#x662F;&#x6570;&#x636E;( &#x57FA;&#x672C;&#x6570;&#x636E;, &#x590D;&#x5408;&#x6570;&#x636E;, &#x7A7A;&#x6570;&#x636E; ), &#x5C31;&#x79F0;&#x4E3A;&#x5C5E;&#x6027;</li>
+<li>&#x5982;&#x679C;&#x952E;&#x503C;&#x662F;&#x51FD;&#x6570;, &#x90A3;&#x4E48;&#x5C31;&#x79F0;&#x4E3A;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+<li>&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x5C06;&#x5C5E;&#x6027;&#x4E0E;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x8D77;&#x6765;</li>
+<li>&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x8FC7;&#x7A0B;&#x5C01;&#x88C5;&#x8D77;&#x6765;</li>
+</ol>
+<h2 id="2-&#x7EE7;&#x627F;&#x6027;">2. &#x7EE7;&#x627F;&#x6027;</h2>
+<p>&#x6240;&#x8C13;&#x7EE7;&#x627F;&#x5C31;&#x662F;&#x81EA;&#x5DF1;&#x6CA1;&#x6709;, &#x522B;&#x4EBA;&#x6709;,&#x62FF;&#x8FC7;&#x6765;&#x4E3A;&#x81EA;&#x5DF1;&#x6240;&#x7528;, &#x5E76;&#x6210;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x4E1C;&#x897F;</p>
+<h3 id="21-&#x4F20;&#x7EDF;&#x7EE7;&#x627F;&#x57FA;&#x4E8E;&#x6A21;&#x677F;">2.1. &#x4F20;&#x7EDF;&#x7EE7;&#x627F;&#x57FA;&#x4E8E;&#x6A21;&#x677F;</h3>
+<p>&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4ECE;&#x7236;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java">class Person {
+ string name;
+ int age;
+}
+
+class Student : Person {
+}
+var stu = new Student();
+stu.name
+</code></pre>
+<p>&#x5373;&#xFF1A;&#x8BA9;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x83B7;&#x5F97;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x65B9;&#x6CD5;</p>
+<h3 id="22-js-&#x7EE7;&#x627F;&#x57FA;&#x4E8E;&#x5BF9;&#x8C61;">2.2. js &#x7EE7;&#x627F;&#x57FA;&#x4E8E;&#x5BF9;&#x8C61;</h3>
+<p>&#x5728;JavaScript&#x4E2D;&#xFF0C;&#x7EE7;&#x627F;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x3002;</p>
+<p>js&#x7EE7;&#x627F;&#x5B9E;&#x73B0;&#x4E3E;&#x4F8B;&#xFF1A;&#x6DF7;&#x5165;&#xFF08;mix&#xFF09;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mix</span> (<span class="hljs-params"> o1, o2 </span>) </span>{
+    <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> o2 ) {
+        o1[ k ] = o2[ k ];
+    }
+}
+</code></pre>
+<h2 id="3-&#x591A;&#x6001;&#x6027;&#xFF08;&#x57FA;&#x4E8E;&#x5F3A;&#x7C7B;&#x578B;&#xFF09;&#x53EA;&#x505A;&#x4E86;&#x89E3;">3. &#x591A;&#x6001;&#x6027;&#xFF08;&#x57FA;&#x4E8E;&#x5F3A;&#x7C7B;&#x578B;&#xFF09;<font color="red">&#x53EA;&#x505A;&#x4E86;&#x89E3;</font></h2>
+<p>&#x628A;&#x4E0D;&#x540C;&#x7684;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x90FD;&#x5F53;&#x4F5C;&#x7236;&#x7C7B;&#x6765;&#x770B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C4F;&#x853D;&#x4E0D;&#x540C;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x5199;&#x51FA;&#x901A;&#x7528;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x505A;&#x51FA;&#x901A;&#x7528;&#x7684;&#x7F16;&#x7A0B;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x9700;&#x6C42;&#x7684;&#x4E0D;&#x65AD;&#x53D8;&#x5316;&#x3002;</p>
+<pre><code>&#x52A8;&#x7269; animal = new &#x5B50;&#x7C7B;(); // &#x5B50;&#x7C7B;&#xFF1A;&#x9EBB;&#x96C0;&#x3001;&#x72D7;&#x3001;&#x732B;&#x3001;&#x732A;&#x3001;&#x72D0;&#x72F8;...
+&#x52A8;&#x7269; animal = new &#x72D7;();
+animal.&#x53EB;();
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Sources/构造函数.html" class="navigation navigation-prev " aria-label="Previous page: 构造函数"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Sources/传统构造函数存在的问题.html" class="navigation navigation-next " aria-label="Next page: 传统构造函数存在的问题"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

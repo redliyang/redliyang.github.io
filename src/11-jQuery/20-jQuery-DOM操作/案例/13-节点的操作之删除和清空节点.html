@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $("button").eq(0).click(function () {
+                //清空li所在的ul
+                //方法1：.html("");
+//                $("ul").html("");
+
+                //方法1：.empty();
+                $("ul").empty();
+            })
+
+
+            $("button").eq(1).click(function () {
+                //删除指定的li。  ---  自杀！
+                $("li:eq(0)").remove();
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>清空li</button>
+    <button>删除第一个li</button>
+
+    <ul>
+        <li>我是土著li1</li>
+        <li>我是土著li2</li>
+        <li>我是土著li3</li>
+        <li>我是土著li4</li>
+    </ul>
+
+</body>
+</html>

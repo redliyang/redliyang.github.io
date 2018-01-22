@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+
+        //定义一个缓存数组，存储已经计算出来的斐波那契数
+        //1.计算的步骤
+            //1.先从cache数组中去取想要获取的数字
+            //2.如果获取到了，直接使用
+            //3.如果没有获取到，就去计算，计算完之后，把计算结果存入cache，然后将结果返回
+
+//        var cache = [];
+//
+//        function fib(n){
+//            //1.从cache中获取数据
+//            if(cache[n] !== undefined){
+//                //如果缓存中有 直接返回
+//                return cache[n];
+//            }
+//            //如果缓存中没有 就计算
+//            if(n <= 2){
+//                //把计算结果存入数组
+//                cache[n] = 1;
+//                return 1;
+//            }
+//            var temp = fib(n - 1) + fib(n - 2);
+//            //把计算结果存入数组
+//            cache[n] = temp;
+//            return temp;
+//        }
+//
+//        console.log(fib(6));
+
+
+
+
+        var count =0 ;
+        function createFib(){
+            var cache = [];
+            function fib(n){
+                count ++;
+                //1.从cache中获取数据
+                if(cache[n] !== undefined){
+                    //如果缓存中有 直接返回
+                    return cache[n];
+                }
+                //如果缓存中没有 就计算
+                if(n <= 2){
+                    //把计算结果存入数组
+                    cache[n] = 1;
+                    return 1;
+                }
+                var temp = fib(n - 1) + fib(n - 2);
+                //把计算结果存入数组
+                cache[n] = temp;
+                return temp;
+            }
+            return fib;
+        }
+
+
+
+//        把下一个知识点应用进来，创建缓存容器
+
+        function createCache(){
+            var cache = {};
+            return function (key, value) {
+                //如果传了值，就说名是设置值
+                if(value !== undefined){
+                    cache[key] = value;
+                    return cache[key];
+                }
+                //如果没有传值，只穿了键，那就是获取值
+                else{
+                    return cache[key];
+                }
+            }
+        }
+
+        var count =0 ;
+        function createFib(){
+            var fibCache = createCache();
+            function fib(n){
+                count ++;
+                //1.从cache中获取数据
+                if(fibCache(n) !== undefined){
+                    //如果缓存中有 直接返回
+                    return fibCache(n) ;
+                }
+                //如果缓存中没有 就计算
+                if(n <= 2){
+                    //把计算结果存入数组
+                    fibCache(n , 1) ;
+                    return 1;
+                }
+                var temp = fib(n - 1) + fib(n - 2);
+                //把计算结果存入数组
+                fibCache(n, temp) ;
+                return temp;
+            }
+
+            return fib;
+        }
+
+
+        var fib = createFib();
+//        console.log(fib(6));
+        fib(5);
+        console.log(count);
+        count = 0;
+        fib(6);
+        console.log(count);
+        count = 0;
+        fib(20);
+        console.log(count);
+        count = 0;
+        fib(21);
+        console.log(count);
+        count = 0;
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

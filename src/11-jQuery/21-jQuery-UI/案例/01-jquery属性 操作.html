@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aaa {
+            border: 1px solid red;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //获取元素，绑定属性
+            var jqinp = $("input").eq(0);
+            var jqinp2 = $("input:checkbox");
+            var jqbtn = $("button");
+
+            jqbtn.click(function () {
+                //绑定到jquery的衣服上，标签上没有
+//                jqinp.title = 111;
+//                console.log(jqinp.title);
+
+                //绑定到标签上
+//                jqinp.attr("title",111);
+//                console.log(jqinp.attr("title"));
+
+                jqinp.attr("aaa",111);
+                console.log(jqinp.attr("aaa"));
+
+                //两个参数是给属性赋值，单个参数是获取属性值。
+                jqinp.attr("class","aaa");
+                console.log(jqinp.attr("class"));
+
+                jqinp.removeAttr("class");
+                console.log(jqinp.attr("class"));
+
+                //form中的特殊属性，用prop
+                jqinp2.prop("checked",true);
+//                jqinp2.attr("checked",true);//一次性的
+
+            });
+        })
+    </script>
+</head>
+<body>
+<button>绑定</button>
+<input type="text"/>
+<input type="checkbox"/>
+
+</body>
+</html>

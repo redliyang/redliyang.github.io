@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //f(n) = f(n-1) + f(n - 2)
+
+        var count = 0;
+        function fib(n){
+            count ++;
+            if(n <= 2){
+                return 1;
+            }
+            return fib(n - 1) + fib(n - 2);
+        }
+
+        fib(5);
+        console.log(count);
+        count = 0;
+        fib(6);
+        console.log(count);
+        count = 0;
+        fib(20);
+        console.log(count);
+        count = 0;
+        fib(21);
+        console.log(count);
+        count = 0;
+
+
+        //使用数组存储数列，虽然可以提升性能，但是有局限性
+        //可以求5的 也可以求10的，但是要求100呢 100000呢
+        var arr = [1, 1, 2, 3, 5, 8, 13, 21, 34];
+
+        arr[0];
+        arr[1];
+        arr[100];
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: pink;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //点击按钮后产生动画
+            $("button:eq(0)").click(function () {
+//                //滑入动画用法1:   slideDown();   不加参数
+                $("div").slideDown();
+
+//                //滑入动画用法2:   slideDown(2000);   毫秒值
+//                $("div").slideDown(2000);
+//                //通过控制  高和display
+
+                //滑入动画用法3:   slideDown(字符串);   slow慢：600ms   normal正常:400ms   fast快：200ms
+//                $("div").slideDown("slow");
+//                $("div").slideDown("fast");
+//                $("div").slideDown("normal");
+
+                //滑入动画用法4:   slideDown(毫秒值，回调函数[显示完毕执行什么]);
+//                $("div").slideDown(5000,function () {
+//                    alert("动画执行完毕！");
+//                });
+            })
+
+            //滑出动画
+            $("button:eq(1)").click(function () {
+//                //滑出动画用法1:   slideUp();   不加参数
+//                $("div").slideUp();
+
+//                //滑出动画用法2:   slideUp(2000);   毫秒值
+//                $("div").slideUp(2000);  //通过这个方法实现的：display: none;
+//                //通过控制  高和display
+
+                //滑出动画用法3:   slideUp(字符串);   slow慢：600ms   normal正常:400ms   fast快：200ms
+//                $("div").slideUp("slow");
+//                $("div").slideUp("fast");
+//                $("div").slideUp("normal");
+
+                //滑出动画用法1:   slideUp(毫秒值，回调函数[显示完毕执行什么]);
+                $("div").slideUp(2000,function () {
+                    alert("动画执行完毕！");
+                });
+            })
+
+            $("button:eq(2)").click(function () {
+                //滑入滑出切换
+                //同样有四种用法
+                $("div").slideToggle(1000);
+            })
+        })
+    </script>
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>切换</button>
+<div></div>
+
+</body>
+</html>

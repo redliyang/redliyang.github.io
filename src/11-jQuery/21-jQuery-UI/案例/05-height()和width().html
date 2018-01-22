@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            padding-left: 10px;
+            border: 10px solid #000;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //获取宽度
+            $("button").eq(0).click(function () {
+                //换个offsetHeiht不一样。只获取高度
+                alert($(".box").width());
+            })
+            //获取宽度
+            $("button").eq(1).click(function () {
+                //设置宽度
+                $(".box").width(200);
+            })
+
+
+            //获取高度
+            $("button").eq(2).click(function () {
+                //换个offsetHeiht不一样。只获取高度
+                alert($(".box").height());
+            })
+            //获取高度
+            $("button").eq(3).click(function () {
+                //设置高度
+                $(".box").height(200);
+            })
+
+        })
+    </script>
+</head>
+<body>
+<button>获取宽度</button>
+<button>设置宽度</button>
+<button>获取高度</button>
+<button>设置高度</button>
+<div class="box"></div>
+</body>
+</html>

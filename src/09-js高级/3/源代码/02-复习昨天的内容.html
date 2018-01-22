@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.面向对象的三大特性
+    封装
+    继承
+    多态
+
+2.创建对象的方式
+    1.字面量
+    2.内置构造函数
+    3.简单工厂函数
+    4.自定构造函数
+
+3.自定义构造函数
+
+4.原型
+
+__proto__
+constructor
+
+<script>
+    function Person(){
+
+    }
+    Person.prototype.name = "张三";
+    var p = new Person();
+    p.name = "李四";
+
+    Person.prototype.car = { brand:"ferrari"};
+    var p1 = new Person();
+    var temp = p1.car;
+    temp.brand = "byd";
+</script>
+</body>
+</html>

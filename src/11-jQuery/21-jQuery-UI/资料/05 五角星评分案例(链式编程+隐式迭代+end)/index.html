@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>五角星评分案例</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .comment {
+      font-size: 40px;
+      color: teal;
+    }
+    
+    .comment li {
+      float: left;
+    }
+    
+    ul {
+      list-style: none;
+    }
+  </style>
+  <script src="../jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+      var wjx_none = '☆', // 空心五角星
+        wjx_sel = '★'; // 实心五角星
+
+      $(".comment").on("mouseenter", "li", function() {
+        // 鼠标移入：让当前的元素和它前面的所有兄弟变为实心
+        // end方法：结束当前链最近的一次过滤操作，并且返回匹配元素之前的状态
+        $(this).text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+      }).on("mouseleave", function() {
+        // 先让所有的五角星变为空心
+        $(".comment").children().text(wjx_none);
+        // 让具有clicked类的元素变为实心，并且它前面的所有元素也变为实心
+        $(".clicked").text(wjx_sel).prevAll().text(wjx_sel);
+      }).on("click", "li", function() {
+        // 给当前元素添加类，给它所有的兄弟元素移除类
+        // 此处clicked类，只做标识用
+        $(this).addClass("clicked").siblings().removeClass("clicked");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+  </ul>
+</body>
+
+</html>

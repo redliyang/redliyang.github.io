@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var divs = document.getElementsByTagName("div");
+            for (var i = 0; i < divs.length; i++) {
+                var div = divs[i];
+
+//                function foo(j) {
+//                    return function () {
+//                        alert("我是第"+ (j+1) +"个div");
+//                    }
+//                }
+//
+//                var f = foo(i);
+//
+//                div.onclick = f;
+
+                div.onclick = function (j) {
+                    return function () {
+                        alert("我是第"+ (j+1) +"个div");
+                    }
+                }(i);
+
+            }
+        }
+
+        //立即执行函数表达式  IIFE  imediately invoked funciton expression
+
+//        ((function() {
+//            console.log("自调用");
+//        }());
+
+//        +function(){
+//                    console.log("自调用");
+//                }();
+    </script>
+</head>
+<body>
+<div>我是第1个div</div>
+<div>我是第2个div</div>
+<div>我是第3个div</div>
+<div>我是第4个div</div>
+<div>我是第5个div</div>
+<div>我是第6个div</div>
+<div>我是第7个div</div>
+<div>我是第8个div</div>
+<div>我是第9个div</div>
+<div>我是第10个div</div>
+</body>
+</html>

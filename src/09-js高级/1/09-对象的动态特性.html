@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name: "刘德华",
+        age:50
+    };
+
+    //对象的动态特性
+    //对象的动态性是指，在对象创建出来之后，为对象添加新的属性或者方法
+//    obj.gender = "male";
+//
+//    obj.sayHello = function () {
+//        console.log("我想死你了");
+//    }
+//
+//    obj.sayHello();
+//
+//    obj.name = "xxx";
+
+    //使用点语法进行赋值的时候，如果对象存在该属性，是修改操作
+    //如果对象不存在该属性，是给该对象新增属性并且赋值
+
+    //对象是不是就是键值对儿的集合
+    // 对象名[属性名]    注意这里的属性名 是字符串
+    //通过这种方式也可以获取对象的属性值
+    //也可以修改对象的属性值
+    //还可以为对象新增属性并赋值
+
+//    console.log(obj["name"]);
+
+//    obj["name"] = "黎明";
+
+//    console.log(obj["name"]);
+
+//    obj["car"] = {
+//        brand : "Ferrari"
+//    };
+
+    //这里如果使用的键不是字符串类型，会隐式的转换成字符串类型
+    obj["[object Object]"] = function () {
+        console.log("我添加成功了");
+    }
+
+    obj["[object Object]"]();
+//    console.log(obj);
+
+    //新增属性、方法的方式有：
+    //1.点语法
+    //2.通过 [] 的形式去添加
+
+</script>
+</body>
+</html>

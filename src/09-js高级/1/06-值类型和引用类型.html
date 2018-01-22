@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //值类型：  string  number  boolean  undefined
+    //  存储的就是数据本身的变量就是值类型的数据
+
+    var str = "太阳天空照，花儿对我笑";
+    var num = 10086;
+    var flag = true;
+
+//    var now = new Date();
+//    console.log(typeof (new Array()));
+//
+//    console.log(typeof (function () {
+//
+//    }))
+    //引用类型：object
+    // 存储的是数据在内存中的地址，数据在内存中单独存储 就是引用类型的数据
+
+    var car = {
+        brand : "Ferrari",
+        type : 430
+    }
+
+    var obj = {
+        name : "张学友",
+        age : 18,
+        car : car
+    };
+
+    //引用类型赋值
+    //引用类型赋值的时候，是将变量中存储的地址复制一份单独存储，但是两个变量共享同一个对象
+    //修改其中一个对象，两外一个引用来访问的时候，也会访问到修改后的对象
+
+</script>
+</body>
+</html>

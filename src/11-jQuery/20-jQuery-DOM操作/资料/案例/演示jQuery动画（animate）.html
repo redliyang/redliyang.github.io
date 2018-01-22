@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      background: #E9FFB7;
+    }
+    
+    .divItem {
+      width: 400px;
+      height: 400px;
+      background: pink;
+      position: absolute;
+      /*margin: 100px auto 0;*/
+    }
+    
+    .disc {
+      font-size: 12px;
+      color: red;
+    }
+    
+    .active {
+      color: #ff6700;
+    }
+    
+    .passed {
+      color: #C6C6C6;
+    }
+    
+    .current {
+      background: #ff6700;
+    }
+  </style>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+
+      // 控制颜色函数
+      function showColor(id) {
+        if (id !== "") {
+          $("#" + id).addClass("active").prev().removeClass().addClass("passed");
+        } else {
+          $("#msg").children(".active").removeClass().addClass("passed");
+        }
+      }
+
+      function showCurSpan(id) {
+        $("#" + id).addClass("current").siblings().removeClass("current");
+      }
+
+      // 执行动画时长
+      var speed = 4000;
+      $("input").click(function() {
+        // false，false
+        //$("div").stop(false);
+
+        // true, false
+        //$("div").stop(true);
+        $("#hide").addClass("active");
+        $("div").hide(speed, function() {
+            showColor("show");
+          })
+          .show(speed, function() {
+            showColor("fadeout");
+          })
+          .fadeOut(speed, function() {
+            showColor("fadein");
+          })
+          .fadeIn(speed, function() {
+            showColor("slideup");
+          })
+          .slideUp(speed, function() {
+            showColor("slidedown");
+          })
+          .slideDown(speed, function() {
+            showColor("fadeto");
+          })
+          .fadeTo(speed, .4, function() {
+            showColor("animate");
+            $("div").css("background", "green");
+          })
+          .animate({
+            left: 400
+          }, speed)
+          .animate({
+            height: 100
+          }, speed)
+          .animate({
+            width: 100
+          }, speed)
+          .animate({
+            height: 400
+          }, speed)
+          .animate({
+            width: 400
+          }, speed)
+          .animate({
+            left: 8
+          }, speed, function() {
+            showColor("");
+            $("div").css("background", "pink").fadeTo(0, 1);
+            $("#msg").children().removeClass();
+          });
+      });
+
+      var $divItem = $(".divItem");
+      var eventObj = {
+        "hide": function() {
+          $divItem.hide(speed);
+        },
+        "show": function() {
+          $divItem.show(speed);
+        },
+        "fadeout": function() {
+          $divItem.fadeOut(speed);
+        },
+        "fadein": function() {
+          $divItem.fadeIn(speed);
+        },
+        "slideup": function() {
+          $divItem.slideUp(speed);
+        },
+        "slidedown": function() {
+          $divItem.slideDown(speed);
+        },
+        "fadeto": function() {
+          $divItem.fadeTo(speed, .4, function() {
+            $("div").css("background", "green");
+          });
+        },
+        "animate": function() {
+          $divItem.animate({
+              left: 400
+            }, speed)
+            .animate({
+              height: 100
+            }, speed)
+            .animate({
+              width: 100
+            }, speed)
+            .animate({
+              height: 400
+            }, speed)
+            .animate({
+              width: 400
+            }, speed)
+            .animate({
+              left: 8
+            }, speed, function() {
+              $("div").css("background", "pink").fadeTo(0, 1);
+            });
+        }
+      };
+      // 动画效果 span 绑定事件
+      $("span").click(function() {
+        $divItem.stop(true, true);
+        // 获取当前span的id属性
+        var id = this.id;
+        // 设置当前被选中
+        showCurSpan(id);
+        // 事件处理
+        eventObj[id]();
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="button" value="开始动画" />
+  <span class="disc">说明：橙色表示当前正在执行的动画，灰色表示已经执行完的动画，黑色表示还没有执行的动画</span>
+  <p id="msg">
+    当前展示的是：
+    <span id="hide">隐藏动画效果</span>
+    <span id="show">展示动画效果</span>
+    <span id="fadeout">淡出动画效果</span>
+    <span id="fadein">淡入动画效果</span>
+    <span id="slideup">滑出动画效果</span>
+    <span id="slidedown">滑入动画效果</span>
+    <span id="fadeto">改变不透明度动画效果</span>
+    <span id="animate">自定义动画效果</span>
+  </p>
+  <div class="divItem"></div>
+</body>
+
+</html>

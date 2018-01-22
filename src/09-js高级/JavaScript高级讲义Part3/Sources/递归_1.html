@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>递归 | JavaScript高级讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Sources/词法作用域.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.1"
+        data-chapter-title="递归"
+        data-filepath="Sources/递归.md"
+        data-basepath=".."
+        data-revision="Mon Oct 24 2016 01:31:56 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> JavaScript高级知识</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="Sources/递归.html">
+            
+                
+                    <a href="../Sources/递归.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        递归
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+            <span><b>1.2.</b> 词法作用域</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Sources/词法作用域.html">
+            
+                
+                    <a href="../Sources/词法作用域.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        词法作用域
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Sources/变量名提升.html">
+            
+                
+                    <a href="../Sources/变量名提升.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        变量名提升
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Sources/作用域链.html">
+            
+                
+                    <a href="../Sources/作用域链.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.3.</b>
+                        
+                        作用域链
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Sources/闭包.html">
+            
+                
+                    <a href="../Sources/闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Sources/函数的四种调用模式.html">
+            
+                
+                    <a href="../Sources/函数的四种调用模式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        函数的四种调用模式
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> 面向对象案例</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" >
+            
+            <span><b>2.1.</b> 歌曲列表管理</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+            <span><b>2.2.</b> Tab栏切换</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >JavaScript高级讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x9012;&#x5F52;">&#x9012;&#x5F52;</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x9012;&#x5F52;">&#x4EC0;&#x4E48;&#x662F;&#x9012;&#x5F52;</h3>
+<p>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x6240;&#x8C13;&#x7684;&#x9012;&#x5F52;&#xFF0C;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x81EA;&#x5DF1;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x7684;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x3002;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x5206;&#x4E24;&#x79CD;&#xFF1A;</p>
+<ol>
+<li><p>&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x81EA;&#x5DF1;</p>
+</li>
+<li><p>&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x81EA;&#x5DF1;</p>
+</li>
+</ol>
+<p>&#x5C31;&#x9012;&#x5F52;&#x800C;&#x8A00;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x8DF3;&#x51FA;&#x7ED3;&#x6784;&#xFF0C;&#x56E0;&#x4E3A;&#x8DF3;&#x51FA;&#x4E86;&#x624D;&#x53EF;&#x4EE5;&#x6709;&#x7ED3;&#x679C;.</p>
+<h3 id="&#x5316;&#x5F52;&#x601D;&#x60F3;">&#x5316;&#x5F52;&#x601D;&#x60F3;</h3>
+<p><strong>&#x5316;&#x5F52;&#x601D;&#x60F3;&#xFF1A;</strong>&#x5C06;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x7531;&#x96BE;&#x5316;&#x6613;&#xFF0C;&#x7531;&#x7E41;&#x5316;&#x7B80;&#xFF0C;&#x7531;&#x590D;&#x6742;&#x5316;&#x7B80;&#x5355;&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;&#x5316;&#x5F52;&#xFF0C;&#x5B83;&#x662F;&#x8F6C;&#x5316;&#x548C;&#x5F52;&#x7ED3;&#x7684;&#x7B80;&#x79F0;&#x3002;</p>
+<p>&#x9012;&#x5F52;&#x601D;&#x60F3;&#x5C31;&#x662F;&#x5C06;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x5DF2;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x6765;&#x5B9E;&#x73B0;</p>
+<p>&#x5047;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;<code>f</code>, &#x5982;&#x679C;&#x5B83;&#x662F;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x7684;&#x8BDD;, &#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x51FD;&#x6570;&#x4F53;&#x5185;&#x7684;&#x95EE;&#x9898;&#x8FD8;&#x662F;&#x8F6C;&#x6362;&#x4E3A; <code>f</code>&#x7684;&#x5F62;&#x5F0F;.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>{
+    ... f( ... ) ...
+}
+</code></pre>
+<h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;:</h4>
+<blockquote>
+<p>1, 2, 3, 4, 5, ..., 100 &#x6C42;&#x548C;</p>
+</blockquote>
+<ol>
+<li><p>&#x9996;&#x5148;&#x5047;&#x5B9A;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x5DF2;&#x7ECF;&#x5199;&#x597D;, &#x5047;&#x8BBE;&#x662F;<code>foo</code>. &#x5373;<code>foo(100)</code>&#x5C31;&#x662F;&#x6C42;<code>1</code>&#x5230;<code>100</code>&#x7684;&#x548C;</p>
+</li>
+<li><p>&#x5BFB;&#x627E;&#x9012;&#x63A8;&#x5173;&#x7CFB;. &#x5C31;&#x662F;<code>n</code>&#x4E0E;<code>n-1</code>, &#x6216;<code>n-2</code>&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;:<code>foo( n ) == n + foo( n - 1 )</code></p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> res = foo(<span class="hljs-number">100</span>);
+<span class="hljs-keyword">var</span> res = foo(<span class="hljs-number">99</span>) + <span class="hljs-number">100</span>;
+</code></pre>
+<p><strong>&#x5C06;&#x9012;&#x63A8;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x4E3A;&#x9012;&#x5F52;&#x4F53;</strong></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">n</span>)</span>{
+    <span class="hljs-keyword">return</span> n + foo( n - <span class="hljs-number">1</span> );
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x5C31;&#x662F;&#x5229;&#x7528;&#x4E86;&#x5316;&#x5F52;&#x601D;&#x60F3;&#xFF1A;</p>
+<ul>
+<li><p>&#x5C06; &#x6C42; 100 &#x8F6C;&#x6362;&#x4E3A; &#x6C42; 99</p>
+</li>
+<li><p>&#x5C06; &#x6C42; 99 &#x8F6C;&#x6362;&#x4E3A; &#x6C42; 98</p>
+</li>
+<li><p>...</p>
+</li>
+<li><p>&#x5C06;&#x6C42; 2 &#x8F6C;&#x6362;&#x4E3A; &#x6C42; 1</p>
+</li>
+<li><p>&#x6C42; 1 &#x7ED3;&#x679C;&#x5C31;&#x662F; 1</p>
+</li>
+<li><p>&#x5373;: foo( 1 ) &#x662F; 1</p>
+</li>
+</ul>
+<p><strong>&#x5C06;&#x4E34;&#x754C;&#x6761;&#x4EF6;&#x52A0;&#x5230;&#x9012;&#x5F52;&#x4F53;&#x4E2D;(&#x6C42;1&#x7684;&#x7ED3;&#x679C;&#x4E3A;1)</strong></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">1</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> n + foo( n - <span class="hljs-number">1</span> );
+}
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;:</h4>
+<blockquote>
+<p>&#x6C42; 1, 3, 5, 7, 9, ... &#x7B2C;<code>n</code>&#x9879;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x524D;<code>n</code>&#x9879;&#x548C;. &#x5E8F;&#x53F7;&#x4ECE;<code>0</code>&#x5F00;&#x59CB;</p>
+</blockquote>
+<h5 id="&#x5148;&#x770B;&#x6C42;&#x7B2C;n&#x9879;">&#x5148;&#x770B;&#x6C42;&#x7B2C;<code>n</code>&#x9879;</h5>
+<ol>
+<li><p>&#x9996;&#x5148;&#x5047;&#x5B9A;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x5DF2;&#x7ECF;&#x5199;&#x597D;, &#x5047;&#x8BBE;&#x662F;<code>fn</code>. &#x90A3;&#x4E48;&#x7B2C;<code>n</code>&#x9879;&#x5C31;&#x662F;<code>fn(n)</code></p>
+</li>
+<li><p>&#x627E;&#x9012;&#x63A8;&#x5173;&#x7CFB;:<code>fn(n) == f(n-1) + 2</code></p>
+</li>
+<li><p>&#x9012;&#x5F52;&#x4F53;</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">return</span> fn(n-<span class="hljs-number">1</span>) + <span class="hljs-number">2</span>;
+}
+</code></pre>
+<ol>
+<li><p>&#x627E;&#x4E34;&#x754C;&#x6761;&#x4EF6;</p>
+<ul>
+<li><p>&#x6C42; n -&gt; n-1</p>
+</li>
+<li><p>&#x6C42; n-1 -&gt; n-2</p>
+</li>
+<li><p>...</p>
+</li>
+<li><p>&#x6C42; 1 -&gt; 0</p>
+</li>
+<li><p>&#x6C42; &#x7B2C; 0 &#x9879;, &#x5C31;&#x662F; 1</p>
+</li>
+</ul>
+</li>
+<li><p>&#x52A0;&#x5165;&#x4E34;&#x754C;&#x6761;&#x4EF6;</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">0</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> fn( n-<span class="hljs-number">1</span> ) + <span class="hljs-number">2</span>;
+}
+</code></pre>
+<h5 id="&#x518D;&#x770B;&#x6C42;&#x524D;n&#x9879;&#x548C;">&#x518D;&#x770B;&#x6C42;&#x524D;<code>n</code>&#x9879;&#x548C;</h5>
+<ol>
+<li><p>&#x5047;&#x8BBE;&#x5DF2;&#x5B8C;&#x6210;, sum( n ) &#x5C31;&#x662F;&#x524D; n &#x9879;&#x548C;</p>
+</li>
+<li><p>&#x627E;&#x9012;&#x63A8;&#x5173;&#x7CFB;: &#x524D; n &#x9879;&#x548C; &#x7B49;&#x4E8E; &#x7B2C; n &#x9879; + &#x524D; n-1 &#x9879;&#x7684;&#x548C;</p>
+</li>
+<li><p>&#x9012;&#x5F52;&#x4F53;</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">return</span> fn( n ) + sum( n - <span class="hljs-number">1</span> );
+}
+</code></pre>
+<ol>
+<li><p>&#x627E;&#x4E34;&#x754C;&#x6761;&#x4EF6;</p>
+<ul>
+<li><code>n == 1</code>&#x7ED3;&#x679C;&#x4E3A; 1</li>
+</ul>
+</li>
+<li><p>&#x52A0;&#x5165;&#x4E34;&#x754C;&#x6761;&#x4EF6;</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> fn(n) + sum(n - <span class="hljs-number">1</span>);
+}
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h4>
+<blockquote>
+<p>2, 4, 6, 8, 10 &#x7B2C; n &#x9879;&#x4E0E; &#x524D; n &#x9879;&#x548C;</p>
+</blockquote>
+<p>&#x89E3;&#x9898;&#x65B9;&#x6CD5;&#x548C;&#x4E0A;&#x4E00;&#x9898;&#x4E00;&#x6837;&#x3002;</p>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h4>
+<blockquote>
+<p>&#x73B0;&#x6709;&#x6570;&#x5217;: 1, 1, 2, 4, 7, 11, 16, &#x2026; &#x6C42; &#x7B2C; n &#x9879;, &#x6C42;&#x524D; n &#x9879;&#x548C;.</p>
+</blockquote>
+<h5 id="&#x6C42;&#x7B2C;n&#x9879;">&#x6C42;&#x7B2C;<code>n</code>&#x9879;</h5>
+<ol>
+<li><p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x5F97;&#x5230;&#x7ED3;&#x679C; fn, fn( 10 ) &#x5C31;&#x662F;&#x7B2C; 10 &#x9879;</p>
+</li>
+<li><p>&#x627E;&#x9012;&#x63A8;&#x5173;&#x7CFB;</p>
+<ul>
+<li><p>0, 1 =&gt; fn( 0 ) + 0 = fn( 1 )</p>
+</li>
+<li><p>1, 2 =&gt; fn( 1 ) + 1 = fn( 2 )</p>
+</li>
+<li><p>2, 3 =&gt; fn( 2 ) + 2 = fn( 3 )</p>
+</li>
+<li><p>...</p>
+</li>
+<li><p>n-1, n =&gt; fn( n-1 ) + n - 1 = fn( n )</p>
+</li>
+</ul>
+</li>
+<li><p>&#x9012;&#x5F52;&#x4F53;&#x4E5F;&#x5C31;&#x6E05;&#x695A;&#x4E86;</p>
+</li>
+<li><p>&#x4E34;&#x754C;&#x6761;&#x4EF6;&#x662F; n == 0 =&gt; 1</p>
+</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">0</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> fn( n-<span class="hljs-number">1</span> ) + n - <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h5 id="&#x524D;n&#x9879;&#x548C;">&#x524D;<code>n</code>&#x9879;&#x548C;</h5>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">0</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> sum( n - <span class="hljs-number">1</span> ) + fn( n );
+}
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h4>
+<blockquote>
+<p>Fibonacci &#x6570;&#x5217;: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, &#x2026; &#x6C42;&#x5176;&#x7B2C; n &#x9879;.</p>
+</blockquote>
+<p>&#x9012;&#x63A8;&#x5173;&#x7CFB;:<code>fn(n) == fn(n-1) + fn(n - 2)</code></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span>(<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> fib( n - <span class="hljs-number">1</span> ) + fib( n - <span class="hljs-number">2</span> );
+}
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h4>
+<blockquote>
+<p>&#x9636;&#x4E58;&#xFF1A;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x9636;&#x4E58;&#x8868;&#x793A;&#x7684;&#x662F;&#x4ECE; 1 &#x5F00;&#x59CB; &#x7D2F;&#x4E58;&#x5230;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;. &#x4F8B;&#x5982; 3! &#x8868;&#x793A; 1 <em> 2 </em> 3. 5! &#x5C31;&#x662F; 1 <em> 2 </em> 3 <em> 4 </em> 5. &#x89C4;&#x5B9A; 0 &#x6CA1;&#x6709;&#x9636;&#x4E58;, &#x9636;&#x4E58;&#x4ECE;1&#x5F00;&#x59CB;&#x3002;</p>
+</blockquote>
+<p>&#x6C42;n&#x7684;&#x9636;&#x4E58;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"> n </span>) </span>{
+    <span class="hljs-keyword">if</span> ( n == <span class="hljs-number">1</span> ) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> foo( n - <span class="hljs-number">1</span> ) * n;
+}
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h4>
+<blockquote>
+<p>&#x6C42;&#x5E42;</p>
+</blockquote>
+<ul>
+<li><p>&#x6C42;&#x5E42;&#x5C31;&#x662F;&#x6C42; &#x67D0;&#x4E00;&#x4E2A;&#x6570; &#x51E0;&#x6B21;&#x65B9;</p>
+</li>
+<li><p>2*2 2 &#x7684; &#x5E73;&#x65B9;, 2 &#x7684; 2 &#x6B21;&#x65B9;</p>
+</li>
+<li><p>&#x6C42; n &#x7684; m &#x6B21;&#x65B9;</p>
+</li>
+<li><p>&#x6700;&#x7EC8;&#x8981;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x51FD;&#x6570; power( n, m )</p>
+</li>
+<li><p>n &#x7684; m &#x6B21;&#x65B9;&#x5C31;&#x662F; m &#x4E2A; n &#x76F8;&#x4E58; &#x5373; n &#x4E58;&#x4EE5; (m-1) &#x4E2A; n &#x76F8;&#x4E58;</p>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">power</span> (<span class="hljs-params"> n, m </span>) </span>{
+    <span class="hljs-keyword">if</span> ( m == <span class="hljs-number">1</span> ) <span class="hljs-keyword">return</span> n;
+    <span class="hljs-keyword">return</span> power( n, m - <span class="hljs-number">1</span> ) * n;
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Sources/词法作用域.html" class="navigation navigation-next " aria-label="Next page: 词法作用域"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

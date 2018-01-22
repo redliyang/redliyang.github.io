@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>开关灯案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 944px;
+            margin: 50px auto 0;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        //入口函数
+        $(document).ready(function () {
+            //获取元素
+            var inpArr = document.getElementsByTagName("input");
+            var bd = $("body");
+            //分别绑定事件
+            //js对象转换成jquery对象
+            $(inpArr[0]).click(function () {
+                //jquery对象转换成js对象
+                bd.get(0).style.backgroundColor = "white";
+            });
+
+            //同理
+            $(inpArr[1]).click(function () {
+                bd[0].style.background = "black";
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="开灯" id="j_openLight"/>
+    <input type="button" value="关灯" id="j_closeLight"/>
+
+    <div>
+        <img src="imgs/coder.jpg" alt=""/>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //上下文
+        //字面意思：上面的文字，下面的文字
+
+        //JS中的上下文
+        //context 执行环境的意思
+        //this
+
+        //在上下文调用模式中，可以修改this的值，也就是可以修改函数的调用方式
+
+        //使用如下两个方法，可以修改函数调用上下文，也就是this的值
+        //apply
+        //api文档中的语法语句中 [] 代表括起来的东西可有可无
+        //函数.apply(对象, 函数需要参数列表，是一个数组)
+        //call
+        //函数.call(对象,arg1,arg2,arg3...argn)
+
+        var name = "莱昂纳多·自强·郭";
+        function sayHello(a, b) {
+            console.log(this.name + "吃了"+ (a * b) + "个馒头");
+        }
+
+//        sayHello();  //
+
+        var obj = {
+            name:"尼古拉斯·电饭·锅"
+        }
+
+        var arr= []
+        arr.push();
+        arr.push();
+        sayHello.apply(obj,arr);  //
+
+        function test(a , b ,c){
+
+        }
+        sayHello.call(obj, 1, 2);
+//        sayHello.call(obj);   //
+
+        //左值 右值
+//        function test(){
+//            this = 1;
+//        }
+
+        //call和apply的区别
+        //1.第一个参数都是要把this修改成的对象
+        //2.当函数需要参数的时候，那么apply是用数组进行参数的传递
+        //3.而call是使用单个的参数进行传递
+
+        //call用于确定了函数的形参有多少个的时候使用
+        //apply用于函数的形参个数不确定的情况
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.作用域
+        //变量的作用范围
+
+        //2.js中的作用域是词法作用域
+            //代码在写好之后，变量的作用域就已经确定，这个就是词法作用域
+
+        //3.js中没有块级作用域
+
+        //4.js中只有函数可以创建作用域
+
+        //5.变量提升
+        //在分析代码的时候，首先将以var声明的变量名和以function开头的函数，进行提升
+        //再去执行代码的具体执行过程
+
+        //1.变量的提升是分作用域的
+        //2.当函数和变量同名的时候，只提升函数，不会提升变量名
+        //3.函数同名，全都都会提升，但是后面的函数，会覆盖前面的函数
+        //4.函数表达式中函数的声明不会被提升，但是变量会被提升
+
+        //6 作用域链
+        //只要是函数，都会有作用域
+        //函数内部的作用域可以访问函数外部的作用域
+        //如果函数进行嵌套，就会构成一个链条的结构，这个就是作用域链
+
+
+//        var func;
+//        func();
+//        func =function(){
+//            console.log(1);
+//        }
+//        func();
+
+//        func();
+//        var func = function(){
+//            console.log(1);
+//        }
+
+
+//        var num = 123;
+//        function num(){
+//            console.log(num);
+//        }
+//        num();
+
+//        function num(){
+//            console.log(num);
+//        }
+//        num = 123;
+//        num();
+
+
+//        var num = 123;
+//
+//        function f1(){
+//            var num =123;
+//            function f2(){
+//
+//            }
+//        }
+//
+//        f1();
+
+//        var num;
+//
+//        function f1(){
+//            var num;
+//            function f2(){
+//
+//            }
+//            num =123;
+//        }
+//
+//        num = 123;
+//        f1();
+
+//        function f1() {
+//            var num = 123;
+//            function f2() {
+//                console.log( num );
+//            }
+//            f2();
+//        }
+//
+//        var num = 456;
+//        f1();
+
+        //f1的作用域-->全局作用域
+        function f1() {
+//            var num = 456;
+            //f2的作用域--->f1的作用域---->全局作用域
+            function f2(){
+                var num = 456;
+                console.log(num);
+            }
+
+            //f5的作用域--->f1的作用域---->全局作用域
+            function f5(){
+
+            }
+        }
+
+        function f2(){var num = 123};
+
+        var num = 123;
+
+        //f3作用域---->全局作用域
+        function f3(){
+            //f4作用域--->f3作用域---->全局作用域
+            function f4(){
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

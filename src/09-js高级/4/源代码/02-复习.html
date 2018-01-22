@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.继承
+            //1.混入式继承  for-in
+            //2.原型继承
+                //1.利用对象的动态特性为原型对象添加成员
+                //2.直接替换原型对象
+                //3.利用混入的方式给原型对象添加成员
+            //3.经典继承
+//                var 新对象 = Object.create(想要继承的对象);
+                //原理，就是进行原型对象替换
+                //方便我们进行继承操作
+        //2.原型链
+
+        //3.Object.prototype的成员
+            //1.constructor 属性，获取和原型对象相关联的构造函数
+            //2.hasOwnProperty 方法，判断对象本身是否拥有某个属性  对象.hasOwnProperty("")
+            //3.isPrototypeOf 方法  判断对象1是不是对象2的原型
+                //对象1.isPrototypeOf(对象2)
+
+//        function Person(){
+//
+//        }
+//
+//        var p = new Person();
+//        var o  ={};
+//        console.log(o.isPrototypeOf(p));
+            //4.propertyIsEnumerable 方法  1.判断属性是否属于对象本身 ， 并且 2.判断属性是否可以被遍历到
+            //5.toString toLocaleString 方法 转换成字符串  toLocaleString是将对象转换成本地格式的字符串
+            //6.valueOf 方法  在参与运算的时候，会首先调用对象的valueOf方法，如果获取到的值不能够参与运算，则调用toString方法
+            //7.__proto__ 属性  指向当前对象的原型对象
+        //4.Function 和 eval
+            //1.Function  可以用来创建函数   (Function可以看做是一个构造函数，用来实例化函数对象)
+            //  语法  var fun = new Function();
+                //创建函数的时候 如果使用的是  new Function(); 创建一个空函数
+                //创建函数的时候 如果使用的是  new Fucntion(参数)； 只有一个参数，那么这个参数为要创建的函数的函数体
+                //创建函数的时候 如果使用的是  new Funciton(参数1，参数2,...参数n) 那么最后一个参数为函数的函数体，前面的所有参数为要创建的函数的形参名
+                //Function这个构造函数接收的所有的参数都是字符串类型的
+
+            //2.eval  可以将字符串转换成js代码并且执行
+                //当使用eval解析 JSON格式的数据（字符串）的时候
+                //会将字符串内的{}当做代码块来解析，所以直接解析 会报错
+                //解决方案:
+                    //1.在JSON格式的字符串前面拼接  "var 变量名 =" +　JSON字符串
+                    //2.在JSON格式的字符串前后加上() "("+ JSON字符串 +")"
+
+            //3.Function和eval有什么区别
+                //共同点，都可以将字符串转换成js代码
+                //不通点
+                //1.Function 创建出来的是 函数 并不会直接调用,只有当手动去调用创建出来的函数的时候，才会执行
+                //2.eval 把字符串转成代码之后，直接就执行了
+        //5.arguments
+            //函数内部的一个对象，在函数调用的时候，默认的会将所有传入的实参依次存入该对象
+            //是一个伪数组
+
+            //arguments.length  可以用来表示传入实参的个数
+            //arguments.callee  指向函数本身
+
+
+        //6.静态成员和实例成员
+            //静态成员
+                //通过构造函数去访问的属性和方法就是静态成员
+                    //Person.成员
+            //实例成员
+                //通过对象去访问的属性和方法就是实例成员
+                    //var p = new Person();  p.成员
+
+
+
+        var func  = new Function("console.log(1)");
+//        func();
+
+        function test(a, b){
+            if(arguments.length !==2){
+                throw "哥们，能不能好好玩耍了，给我好好传参好吧"
+            }
+            test();
+        }
+
+//        (function(){
+//            arguments.callee();
+//        })()
+
+        test(1,2,3,4,5,6,7);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

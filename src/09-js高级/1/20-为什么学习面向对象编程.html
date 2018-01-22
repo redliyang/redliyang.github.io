@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+
+        window.onload = function () {
+            //要求创建出来一个div 并且设置样式，然后加到body标签当中
+
+
+            //使用面向过程的思维方式来解决js问题
+
+            //1.创建div
+//            var div = document.createElement("div");
+//            //2.设置div的样式
+//            div.style.height = "200px";
+//            div.style.width = "200px";
+//            div.style.border = "1px solid pink";
+//            //3.添加div到body中去
+//            document.body.appendChild(div);
+
+
+            //使用面向对象的思维方式来解决js问题
+            $("body").append("<div style='width:200px;height:200px;border:1px solid pink'></div>")
+
+        //面向对象是对面向过程的封装，有了面向对象并不意味着，就可以抛弃面向过程
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

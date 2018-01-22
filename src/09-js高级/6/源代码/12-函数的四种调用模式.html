@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.函数模式
+            //this指向window全局对象
+
+        //2.方法模式
+            //this指向调用这个方法的对象
+
+        //3.构造函数模式
+            //this 使用new创建出来的对象
+
+        //4.上下文模式
+
+        function test(){
+            console.log(this);
+        }
+        test();
+
+        var obj1 = {
+            test:function(){
+                console.log(this);
+            }
+        }
+        obj1.test();
+
+        function Person(){
+            console.log(this);
+        }
+        var obj =new Person();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

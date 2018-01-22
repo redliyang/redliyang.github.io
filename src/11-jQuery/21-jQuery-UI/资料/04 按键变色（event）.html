@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .wrap {
+      width: 400px;
+      height: 400px;
+      margin: 100px auto 0;
+    }
+    
+    .wrap h1 {
+      text-align: center;
+    }
+    
+    .wrap div {
+      width: 400px;
+      height: 300px;
+      background: pink;
+      font-size: 30px;
+      text-align: center;
+      line-height: 300px;
+    }
+  </style>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+      var $bgChange = $("#bgChange"),
+        $keyCodeSpan = $("#keyCodeSpan");
+
+      // 设置背景颜色函数
+      function setBg(color) {
+        $bgChange.css("background", color);
+      }
+
+      // 改变背景颜色函数
+      function changeBg(keyCode) {
+        switch (keyCode) {
+          case 82:
+            setBg("red");
+            break;
+          case 71:
+            setBg("green");
+            break;
+          case 66:
+            setBg("blue");
+            break;
+          case 89:
+            setBg("yellow");
+            break;
+          case 79:
+            setBg("orange");
+            break;
+          case 80:
+            setBg("pink");
+            break;
+          default:
+            setBg("#00BCD4");
+            break;
+        }
+      }
+
+      $("body").on("keydown", function(e) {
+        // 展示当前keyCode
+        $keyCodeSpan.html(e.keyCode);
+        // 改变颜色函数
+        changeBg(e.keyCode);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>按键改变颜色</h1>
+    <div id="bgChange">keyCode为：<span id="keyCodeSpan"></span></div>
+  </div>
+</body>
+
+</html>

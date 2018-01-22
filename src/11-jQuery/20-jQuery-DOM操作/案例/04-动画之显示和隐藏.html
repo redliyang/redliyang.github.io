@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: pink;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //点击按钮后产生动画
+            $("button:eq(0)").click(function () {
+//                //显示动画用法1:   show();   不加参数
+                $("div").show();  //通过这个方法实现的：display: block;
+
+//                //显示动画用法2:   show(2000);   毫秒值
+//                $("div").show(2000);  //通过这个方法实现的：display: block;
+//                //通过控制  宽高透明度和display
+
+                //显示动画用法3:   show(字符串);   slow慢：600ms   normal正常:400ms   fast快：200ms
+//                $("div").show("slow");
+//                $("div").show("fast");
+//                $("div").show("normal");
+
+                //显示动画用法1:   show(毫秒值，回调函数[显示完毕执行什么]);
+//                $("div").show(5000,function () {
+//                    alert("动画执行完毕！");
+//                });
+            })
+
+            //隐藏动画
+            $("button:eq(1)").click(function () {
+//                //显示动画用法1:   hide();   不加参数
+                $("div").hide();  //通过这个方法实现的：display: none;
+
+//                //显示动画用法2:   hide(2000);   毫秒值
+//                $("div").hide(2000);  //通过这个方法实现的：display: none;
+//                //通过控制  宽高透明度和display
+
+                //显示动画用法3:   hide(字符串);   slow慢：600ms   normal正常:400ms   fast快：200ms
+//                $("div").hide("slow");
+//                $("div").hide("fast");
+//                $("div").hide("normal");
+
+                //显示动画用法4:   hide(毫秒值，回调函数[显示完毕执行什么]);
+//                $("div").hide(2000,function () {
+//                    alert("动画执行完毕！");
+//                });
+            })
+
+            $("button:eq(2)").click(function () {
+                //显示隐藏切换
+                //同样有四种用法
+                $("div").toggle(2000);
+            })
+        })
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+
+</body>
+</html>

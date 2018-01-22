@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //写一个构造函数，用来创建学生对象
+        //属性：姓名 年龄 身高 体重
+        //行为：学习  吃饭  看片 把妹
+
+        function studyMethod(){
+            console.log("我叫"+ this.name +"Good Good Study Day Day Up");
+        }
+
+
+        function Student(stuName) {
+            this.name = stuName;
+            this.study = studyMethod;
+            //方法* 8*10^20
+        }
+
+        //如果构造函数没有参数，那么在调用的时候 小括号 可以省略
+        var stu = new Student("高金彪");
+        stu.study();
+
+        var stu1 = new Student("李嘉欣");
+        stu1.study();
+
+        //如果在构造函数中定义函数，那么每次创建对象，都会重新创建该函数
+        //但是函数内部代码完全相同，就造成了资源浪费
+        //为了处理这个问题，我们要让所有的对象共用一个方法
+        //在构造函数外部定义好该函数，将该函数赋值给构造函数内的方法
+
+        //使用这种方式写好的方法中的this指向的就是调用该方法的对象
+        //this 谁调用就是谁
+
+
+        //使用这种方式存在的问题
+        //1.全局变量增多，造成污染
+        //2.代码结构混乱，不易维护
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //函数表达式
+        //函数表达式不会被提升
+        func();
+        var func = function(){
+            alert("你猜我会不会被调用");
+        }
+
+        //提升后的代码
+        var func;
+        func();
+        func = function(){
+            alert("你猜我会不会被调用");
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

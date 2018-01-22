@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //使用原型的注意事项
+        //1.使用对象访问属性的时候，如果在本身内找不到就会去原型中查找
+        //但是使用点语法进行属性赋值的时候，并不会去原型中进行查找
+        //使用点语法赋值的时候如果，对象中不存在该属性，就会给该对象新增该属性，而不会去修改原型中的属性
+
+        //2.如果在原型中的属性是引用类型的属性，
+        //那么所有的对象共享该属性，并且一个对象修改了该引用类型属性中的成员，其他对象也都会受影响
+
+        //3.一般情况下不会将属性放到原型对象中
+        //一般情况下原型中只会放需要共享的方法
+
+        function Person(){
+
+        }
+
+//        Person.prototype.name = "张三";
+//        Person.prototype.age = 18;
+//
+//        var p = new Person();
+//        console.log(p.name);
+//
+//        p.name = "李四";
+////        console.log(p.name);
+//
+//        var p1 = new Person();
+//        console.log(p1.name);
+
+        var x = {
+            brand:"laosilaisi",
+            type:"huanying"
+        };
+
+        Person.prototype.car = x;
+//
+        var p = new Person();
+//
+        console.log(p.car.brand);
+
+        Person.prototype.car = {
+            brand:"BYD"
+        };
+
+        var p1 =new Person();
+        console.log(p1.car.brand);
+
+        p.car = {
+
+        };
+//
+//        var p1 = new Person();
+//        console.log(p1.car.brand);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

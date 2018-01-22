@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1、什么是闭包
+        //闭：闭合，关闭，封闭
+        //包：包裹，包起来
+
+        //一个具有封闭的对外不公开的, 包裹结构, 或空间
+
+        //2、js中的闭包
+        //就是函数
+
+        //3、闭包的原理就是作用域访问原则
+        //上级作用域无法直接访问下级作用域中的变量
+
+//        function f1(){
+//            var num = 123;
+//            function f2(){
+//                console.log(num);
+//            }
+//            f2();
+//        }
+
+        //4.闭包要解决什么问题？
+            //1.闭包内的数据不允许外界访问
+            //2.要解决的问题就是间接访问该数据
+
+//        function foo () {
+//            var num = 123;
+//            return num;
+//        }
+//
+//        var x = foo();
+//        console.log(x);
+//
+//        var y = foo();
+//        console.log( x === y );
+
+        //用来说明函数的每次调用，返回的对象都是新的  每次都不一样
+//        function foo(){
+//            var obj = {
+//                name:"潘文斌",
+//                nickName:"文武宝宝"
+//            }
+//            return obj;
+//        }
+//        var obj1 = foo();
+//        var obj2 = foo();
+//        console.log(obj1 == obj2);
+
+
+        //使用return关键字将函数内部的数据返回，这个数据只能被使用一次
+//        function foo(){
+//            var num = 123;
+//            return num;
+//        }
+//
+//        var x = foo();
+
+            //1.函数内部的函数中可以访问该函数中的变量
+            //2.但是我们需要在函数外部去访问函数中变量
+
+        function foo(){
+            var num = 123;
+            return function(a){
+                //1.如果传参数，这里的a肯定不是Undefined，所以条件判断为true
+                if(a !== undefined){
+                    num = a;
+                }else{
+                    //如果不传参，代表要获取这个值，直接return
+                    return num;
+                }
+            };
+        }
+        var func =  foo();
+        //设置值
+        func(789);
+
+        //理想状态下的获取值
+        var x = func();
+        console.log(x);
+        func(987);
+        console.log(func());
+
+        //1.闭包基本模式
+
+        //在外部函数（foo）内创建函数(inner)，在这个内部函数(inner)中，可以操作foo中的数据
+        //将外部函数的返回值设置为内部函数
+        //在外部调用外部函数（foo）,就可以接受到返回值(内部函数)
+        //使用这个内部函数，就可以在外部对外部函数里的变量进行修改
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

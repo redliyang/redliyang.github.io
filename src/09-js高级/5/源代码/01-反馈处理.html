@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //instancof 关键字
+        //  对象  instanceof 构造函数
+        //判断这个构造函数的原型是不是在该对象的原型链上
+
+        function Person(){};
+
+        var p = new Person();
+
+        //p ----> Person.prototype---->Object.prototype--->null
+        console.log(p instanceof Object);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

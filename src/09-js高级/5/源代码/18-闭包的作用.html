@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+
+        function foo(){
+            var name = "潘明";
+            var badLevel = -1000000000000000000000000000000000;
+            return {
+                getName: function () {
+                    return name;
+                },
+                setName: function (value) {
+                    name = value;
+                    return name;
+                },
+                getBadLevel:function(){
+                    return badLevel;
+                },
+                setBadLevel:function (value) {
+                    //在函数外部想要修改数据
+                    //只能通过函数内部的方法
+                    //我们可以在函数内部定义的这个方法里
+                    //设置安全措施，校验之类的操作
+                    //可以保证系统的安全性和稳定性
+                    if(value > 0 ){
+                        throw "你敢说我坏！！！";
+                    }
+
+                    badLevel = value;
+                    return badLevel;
+                }
+            }
+        }
+
+//
+
+        var obj = foo();
+//        obj.setName("高金彪");
+        obj.setBadLevel(obj.getBadLevel() * -1 * Math.pow(10,10000000));
+        console.log(obj.getBadLevel());
+
+        //闭包的作用
+        //最基本的作用：可以通过闭包返回的函数或者方法，来修改函数内部的数据
+        //创建一个私有的空间，保护数据
+        //外部想要访问数据，只能通过函数提供的方法
+        //在提供的方法中，我们可以设置一些校验逻辑，让数据变得更加安全
+
+        var name = "";
+        var age = 19;
+
+        //张二狗
+        name = "二狗";
+
+        //隔壁老王
+        name = "隔壁老王到此一游";
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

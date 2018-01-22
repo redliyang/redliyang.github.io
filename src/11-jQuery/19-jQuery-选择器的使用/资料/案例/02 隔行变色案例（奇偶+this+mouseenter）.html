@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    li:hover {
+      background: red;
+    }
+  </style>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+      // 隔行变色
+      $("li:odd").css("background-color", "yellow");
+      $("li:even").css("background-color", "red");
+
+
+      var libg = "";
+
+      $("li").mouseenter(function() {
+        libg = $(this).css("background-color");
+        $(this).css("background", "gray");
+      });
+
+      $("li").mouseleave(function() {
+        $(this).css("background", libg);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>隔行变色,索引号为：0</li>
+    <li>隔行变色,索引号为：1</li>
+    <li>隔行变色,索引号为：2</li>
+    <li>隔行变色,索引号为：3</li>
+    <li>隔行变色,索引号为：4</li>
+    <li>隔行变色,索引号为：5</li>
+    <li>隔行变色,索引号为：6</li>
+    <li>隔行变色,索引号为：7</li>
+    <li>隔行变色,索引号为：8</li>
+    <li>隔行变色,索引号为：9</li>
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 5px;
+            height: 200px;
+            width: 200px;
+            border:6px dashed pink;
+        }
+        p{
+            display: block;
+            height: 200px;
+            width: 200px;
+            border:6px dashed pink;
+        }
+    </style>
+    <script>
+        //案例：求一个数组中的最大值
+        var arr = [9, 1, 4, 10, 7, 22, 8];
+        //Math.max
+//        Math.max(1,2,34,5);
+
+        //apply方法的第二个参数 是一个数组
+        // 在调用的时候，会将数组中的每一个元素拿出来，作为形参，挨个传递给函数
+
+        //apply方法和call方法第一个参数传递null的时候，都表示为函数调用模式
+        //也就是将this指向window
+        var max = Math.max.apply(null, arr);
+        console.log(max);
+
+
+        //案例：将传入的参数打印，参数之间用-相互连接
+
+        function foo() {
+//            return arguments.join("-");
+
+            //伪数组不具有join方法，所以这个时候就要考虑去借用一下数组的join方法
+//            var str = Array.prototype.join.apply(arguments,["-"]);
+            var str = [].join.apply(arguments,["-"]);
+            return str;
+        }
+        var str = foo(1, 3, "abc", "ffff", 99) // 1-3-abc-ffff-99
+        console.log(str);
+
+
+        //        var arr = [1,2,3,4];
+//        console.log(arr.join("-"));
+
+        window.onload = function () {
+            //案例：给页面上所有的 div 和 p 标签添加背景色
+            var divs = document.getElementsByTagName("div");
+            var ps = document.getElementsByTagName("p");
+
+            var arr = [];
+            //little tip:  push方法可以传多个参数
+            //arr.push(1,2,3,4,4,5)
+
+            arr.push.apply(arr,divs);
+            arr.push.apply(arr,ps);
+
+            //如果使用arr.push()直接把divs传进来
+            //那么相当于在arr中的第一个元素中存储了一个divs数组
+            //但是我们需要把divs中的每一个元素单独的存入arr中
+            //所以需要调用push方法的如下形式  push(1,2,4,4,5)
+            //要实现这个形式的调用，就用到了apply方法的第二个参数的特性
+            //在调用的时候，会第二个参数的数组，拆成每一个元素以（a,b,c,d,e,f,g） 传入函数
+
+            //相当于 arr.push(divs[0],divs[1],divs[..])
+//            arr.push(divs)
+
+
+
+            for (var k = 0; k < arr.length; k++) {
+                var ele = arr[k];
+                ele.style.backgroundColor = "yellow";
+            }
+
+//            for (var i = 0; i < divs.length; i++) {
+//                var div = divs[i];
+//                div.style.backgroundColor = "#ccc";
+//            }
+//
+//            for (var j = 0; j < ps.length; j++) {
+//                var p = ps[j];
+//                p.style.backgroundColor = "#ccc";
+//            }
+        }
+
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<p></p>
+<p></p>
+<p></p>
+
+</body>
+</html>

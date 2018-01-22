@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        //入口函数
+        jQuery(document).ready(function () {
+            //三种方法获取jquery对象，然后用css方法操作
+            var jqdiv = $("div");
+            var jqCdiv = $(".box");
+            var jqIdiv = $("#box");
+
+            jqdiv.css("width",100);
+            jqdiv.css("height",100);
+            jqdiv.css("margin",10);
+            jqdiv.css("background","pink");
+
+            //操作类选择器(隐式迭代，不用一个一个设置)
+            jqCdiv.css("background","red");
+
+            //操作id选择器
+            jqIdiv.css("background","yellow");
+        });
+    </script>
+</head>
+<body>
+
+<div></div>
+<div class="box"></div>
+<div id="box"></div>
+<div class="box"></div>
+<div></div>
+
+
+</body>
+</html>

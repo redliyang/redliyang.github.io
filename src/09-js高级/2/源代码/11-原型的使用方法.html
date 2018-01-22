@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        //原型的使用方法
+        //1.利用对象的动态特性给原型对象添加成员
+        //2.直接替换原型对象
+
+        //如果使用第二种方式使用原型，那么会出现如下问题：
+        //在替换原型之前创建的对象的原型 和 在替换原型对象之后的创建的对象
+        //的原型 不是同一个！
+
+        Person.prototype.sayHello = function () {
+            console.log("Nice to meet you all");
+        }
+
+        var p = new Person("刘能", 18, "male");
+        p.sayHello();
+
+        //替换了原型对象
+        Person.prototype = {
+            msg : "你猜我在不在"
+        };
+
+        var p1 = new Person("xzy",18,"male");
+
+        console.log(p1.msg);
+//        p1.sayHello();  //不能
+        p.sayHello();   //不能
+
+        //       var o = {
+//           name : ""
+//       };
+//
+//        o.name = "赵四儿";
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //js代码的执行分为两个步骤
+        //1.预解析
+            //提升（hoisting）
+            //JavaScript代码在预解析阶段，会对以var声明的变量名，和function开头的语句块，进行提升操作
+
+        //2.执行
+
+//        func();
+//        function func(){
+//            alert("Funciton has been called");
+//        }
+
+        //变量的提升
+//        alert(a);
+//        var a = 1;
+
+        //提升之后的代码模拟
+//        var a;
+//        alert(a);
+//        a = 1;
+
+        //函数同名，如何提升
+        //预处理的时候，会将两个函数全部提升，但是后面的函数会覆盖掉前面函数
+//        func1();  //last
+//        function func1(){
+//            console.log('This is first func1');
+//        }
+//
+//        func1();  //last
+//        function func1(){
+//            console.log('This is last func1');
+//        }
+//        //预解析提升后的代码
+//        function func1(){
+//            console.log('This is first func1');
+//        }
+//
+//        function func1(){
+//            console.log('This is last func1');
+//        }
+//        func1();  //last
+//        func1();  //last
+
+        //变量和函数同名
+        //在提升的时候，如果有变量和函数同名，会忽略掉变量，只提升函数
+        alert(foo); //undefined  函数体
+        function foo(){}
+        var foo = 2;
+        alert(foo); //2
+        //预解析 提升后的代码
+        function foo(){};
+        alert(foo);
+        foo=2;
+        alert(foo);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

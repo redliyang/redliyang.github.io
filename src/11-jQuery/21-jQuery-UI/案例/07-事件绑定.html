@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+
+        //这种绑定事件的方法是不会层叠的。
+//        $(document).click(function () {
+//            alert(1);
+//        });
+//        $(document).click(function () {
+//            alert(2);
+//        });
+
+        //第二种绑定：bind
+//        $(document).bind("click mouseenter", function () {
+//            alert(1);
+//        })
+//        $(document).bind("click mouseenter", function () {
+//            alert(2);
+//        })
+
+        //第三种
+//        $(document).delegate(".box","click mouseenter", function () {
+//            alert(1);
+//        })
+
+        //第四种(重点)
+//        $(document).on("click mouseenter",".box",{"name":111}, function (event) {
+//            alert(event.data.name);
+//        });
+
+//        $(document).on("click",".box", function () {
+//           alert(1);
+//        });
+
+
+    </script>
+
+</head>
+<body>
+<div class="box" style="width: 100px;height: 100px;background-color: pink;"></div>
+</body>
+</html>

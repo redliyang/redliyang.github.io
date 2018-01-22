@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //构造函数调用模式的特征
+
+        //1.构造函数的首字母要大写
+        //2.一般情况下和new关键字一起使用
+        //3.构造函数中的this指定而是new关键字创建出来的对象
+        //4.默认的返回new创建出来的这个对象
+
+        function Person(){
+
+        }
+
+        var p = new Person();
+        //构造函数的返回值：
+        //默认返回new创建创建出来的对，若是值类型的数据，没有影响
+        //若是对象类型，则返回这个对象，不会返回原来创建出来的对象
+
+        //1.工厂模式的构造函数
+        function Person(name,age){
+            var o = {
+                name:name,
+                age:age,
+                sayHello:function(){
+
+                }
+            }
+            return o;
+        }
+
+        var p = Person("张三", 18);
+        console.log(p);
+        //简单工厂模式的构造函数 创建出来的对象 跟该构造函数无关
+        //简单工厂模式的构造函数，实际的调用模式是 函数模式
+
+        //2.寄生式构造函数
+        function Person(name,age){
+            var o = {
+                name:name,
+                age:age,
+                sayHello:function(){
+
+                }
+            }
+            return o;
+        }
+
+        var p = new Person();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

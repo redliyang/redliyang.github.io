@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, gender, car){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.car = car;
+        }
+
+        var x = {
+            brand:"byd"
+        };
+
+        var p = new Person("张学友","18","male",x);
+
+        var p1 = new p.constructor("张学友1","19","male",x);//相当于直接使用 new Person()
+        console.log(p1);
+
+        //原型对象在创建出来的时候，会默认的有一个constructor属性
+        //指向对应的构造函数
+//        var o = Person.prototype;
+//        Person.prototype.constructor
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

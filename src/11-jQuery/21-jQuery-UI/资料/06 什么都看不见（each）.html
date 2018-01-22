@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>复制</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+    
+    li {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: pink;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 20px 20px 0;
+    }
+  </style>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script>
+    $(function() {
+      var $lis = $("#ulList").children("li");
+      // index 表示 当前元素的索引号
+      // ele   表示 当前元素，ele === this，是一个DOM对象
+      $lis.each(function(index, ele) {
+        console.log(ele);
+        // 设置不透明度值
+        $(ele).css("opacity", (index + 1) / 10);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <ul id="ulList">
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+    <li>什么都看不见</li>
+  </ul>
+</body>
+
+</html>

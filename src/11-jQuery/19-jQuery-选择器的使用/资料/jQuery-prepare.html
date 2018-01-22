@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery预备</title>
+</head>
+
+<body>
+  <a href="http://www.w3school.com.cn/htmldom/dom_intro.asp" target="_blank">DOM介绍</a>
+  <script>
+    // 数组
+    var arr = [1, "2", true, {
+      msg: "我是数组的一个元素"
+    }];
+    // 取数组的值
+    console.log(arr[3]);
+    console.log(arr[3].msg);
+
+    // 函数返回值
+    function foo() {
+      return "返回值为字符串";
+    }
+
+    console.log(foo());
+
+    // 函数作为参数传递
+    function test(fn) {
+      fn();
+    }
+    test(function() {
+      console.log("函数作为参数传递");
+    });
+
+    // 对象（难）
+    var obj = {
+      "name": "王二麻子",
+      "age": 16,
+      "setName": function(nameStr) {
+        this.name = nameStr;
+        console.log(this.name);
+        return this;
+      },
+      "addAge": function() {
+        this.age++;
+        console.log(this.age);
+        return this;
+      }
+    };
+
+    // 调用对象的 方法（难）
+    obj.setName("屯").addAge();
+  </script>
+</body>
+
+</html>

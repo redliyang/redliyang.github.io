@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1
+//        function foo() {
+//            var num = 123;
+//            console.log(num); //?123
+//        }
+//        foo();
+//        console.log(num); //?
+
+        //提升后的代码
+//        function foo() {
+//            var num;
+//            num = 123;
+//            console.log(num); //?123
+//        }
+//        foo();
+//        console.log(num); //?
+
+        //is not defined 没有定义
+        //undefined  定义了没有赋值
+
+        var scope = "global";
+
+        foo();
+
+        function foo() {
+
+            console.log(scope); //？
+            var scope = "local";
+            console.log(scope); //？
+        }
+
+        //提升后的代码
+//        var scope;
+//        function foo(){
+//            var scope;
+//            console.log(scope); //？
+//            scope = "local";
+//            console.log(scope); //？
+//        }
+//        scope = "global";
+//        foo();
+
+        //in 关键字 判断某个对象中是否有某个属性
+
+//        function f1(){
+//            var a;
+//            if("a" in window){
+//                var a = 10;
+//            }
+//            alert(a);
+//        }
+//        f1();
+
+//        if("a" in window){
+//            var a = 10;
+//        }
+//        alert(a); // ?
+//        //预解析
+//        var a;
+//        if("a" in window){
+//            a = 10;
+//        }
+//        alert(a);
+
+//        var a;
+//        if(!"a" in window){
+//            a = 10;
+//        }
+//        alert(a); // ?
+
+
+//        var foo = 1;
+//        function bar() {
+//            if(!foo) {
+//                var foo = 10;
+//            }
+//            alert(foo); //??10
+//        }
+//        bar();
+//
+//        //提升后的代码
+//        var foo;
+//        function bar(){
+//            var foo;
+//            if(!foo) {
+//                foo = 10;
+//            }
+//            alert(foo); //??10
+//        }
+//        foo = 1;
+//        bar();
+
+
+//        function Foo() {
+//            getName = function(){ alert(1); };
+//            return this;
+//        }
+
+//        Foo.getName = function() { alert(2); };
+//        Foo.prototype.getName = function(){ alert(3); };
+//        var getName = function() { alert(4); };
+//        function getName(){ alert(5); }
+//
+//        Foo.getName(); // ?  alert 2
+//        getName(); // ? 4
+//        Foo().getName(); // ? 1
+//        getName(); // ? 4  //1
+//        new Foo.getName(); // ? 2
+//        new Foo().getName(); // ? 3
+//        new new Foo().getName(); // ?  3
+//
+//        function Foo() {
+//            getName = function(){ alert(1); };
+//            return this;
+//        }
+//
+//        var getName;
+//
+//        function getName(){
+//            alert(5);
+//        }
+//
+//        Foo.getName = function() { alert(2); };
+//        Foo.prototype.getName = function(){ alert(3); };
+//        getName = function() { alert(4); };
+//
+////        Foo.getName(); // ?  alert 2
+////        getName(); // ? 4
+////        Foo().getName(); // ? 1
+////        getName(); // ?   //1
+////          new Foo.getName(); // ? 3  等价于直接调用Foo.getName
+////        (new Foo).getName();
+////        new Foo().getName(); // ? 3
+//         new new Foo().getName(); // ?  3
+
+
+
+    function Person() {
+
+    }
+      var p =  new Person;
+      var p1 =  new Person();
+
+//        new Person.getName();
+//        new Perosn().getname();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
