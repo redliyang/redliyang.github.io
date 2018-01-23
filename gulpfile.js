@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    eslint = require('eslint'),
     changed = require('gulp-changed'),//检查改变状态  
     browserSync = require("browser-sync").create();//浏览器实时刷新  
 
