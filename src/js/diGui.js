@@ -32,3 +32,54 @@ function func(n) {
 
 var a = func(5);
 // console.log(a);
+
+function sum(n) {
+    if (n == 1) {
+        return 1;
+    }
+    //return 1+2+3
+    //return 1+2
+    console.log(n);
+    console.log('-------------');
+    return n + sum(n - 1);
+}
+
+// var num = sum(5);
+// console.log(num);
+
+
+
+
+var count = 0;
+function test() {
+    if (count++ == 5) {
+        console.log(count + '---');
+        return;
+    }
+    console.log(count);
+    test();
+}
+
+// test();
+
+console.log(document.body.childNodes);
+// localName
+// :
+// "script"
+// nodeName
+// :
+// "SCRIPT"
+var arr = document.body.childNodes;
+
+function findChild(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const ele = arr[i];
+        if (ele.nodeType == 1 && ele.nodeName != "SCRIPT") {
+            console.log(ele.nodeType);
+            ele.style.border = '1px solid red';
+            findChild(ele.childNodes);
+        }
+    }
+}
+
+findChild(arr);
