@@ -16,13 +16,15 @@ Marray.prototype = {
 
 
 
-var scope = "global";
-foo();
 
-function foo() {
 
-    console.log(scope); //？
-    // var scope = "local";
-    // console.log(scope); //？
+
+function f3() {
+    var aa = this;
+    // for(var a in aa){
+    //     console.log(a + '--' + aa[a]);
+    // }
+    console.log(aa);
 }
-
+f3()
+// console.log(f3());
