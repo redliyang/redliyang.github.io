@@ -14,14 +14,18 @@ Marray.prototype = {
     }
 }
 
+var num = 123;
+//        num = "";
+//        num = true;
+//        num = [];
+//        num = function () {
+//
+//        }
 
-function Foo() {
-    getName = function () { alert(1); };
-    return this;
-}
-
-function getName() { alert(5); }
-
-// getName = function () { alert(4); };
-
-Foo().getName(); // ?1
+//        var func1 = function (){
+//            console.log(123);
+//        }
+//
+//        func1 = function(){
+//            console.log(456);
+//        }
