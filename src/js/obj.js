@@ -14,11 +14,15 @@ Marray.prototype = {
     }
 }
 
-function funv1() {
-    console.log(1);
+
+
+var scope = "global";
+foo();
+
+function foo() {
+
+    console.log(scope); //？
+    // var scope = "local";
+    // console.log(scope); //？
 }
-function funv1() {
-    console.log(2);
-}
-funv1();
-console.log('1');
+
