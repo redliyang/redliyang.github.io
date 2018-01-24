@@ -13,21 +13,19 @@ Marray.prototype = {
         return temp;
     }
 }
+// 
+// var num;
+function f() {
+    function foo() {
+        var num;
+        num = 999;
+        console.log(num); // 999
+    }
 
-var num = 123;
-       num = "";
-       num = true;
-       num = [];
-       num = function () {
-
-       }
-console.log(num);
-
-// var func1 = function (){
-//     console.log(123);
-// }
-//
-func1()
-func1 = function (){
-    console.log(456);
+    console.log(num); //678
+    // var num = 678;
+    foo();
 }
+
+f();
+num = 456;
