@@ -15,16 +15,13 @@ Marray.prototype = {
 }
 
 
-
-
-
-
-function f3() {
-    var aa = this;
-    // for(var a in aa){
-    //     console.log(a + '--' + aa[a]);
-    // }
-    console.log(aa);
+function Foo() {
+    getName = function () { alert(1); };
+    return this;
 }
-f3()
-// console.log(f3());
+
+function getName() { alert(5); }
+
+// getName = function () { alert(4); };
+
+Foo().getName(); // ?1
