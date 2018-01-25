@@ -14,18 +14,37 @@ Marray.prototype = {
     }
 }
 // 
-// var num;
-function f() {
-    function foo() {
-        var num;
-        num = 999;
-        console.log(num); // 999
+//
+
+function foo(){
+    var obj = {
+        name:"潘文斌",
+        nickName:"文武宝宝"
     }
-
-    console.log(num); //678
-    // var num = 678;
-    foo();
+    return obj;
 }
+var obj1 = foo();
+var obj2 = foo();
+// console.log(obj1 == obj2);
 
-f();
-num = 456;
+function foo() {
+    var num = 123;
+    return function (a) {
+        //1.如果传参数，这里的a肯定不是Undefined，所以条件判断为true
+        if (a !== undefined) {
+            num = a;
+        } else {
+            //如果不传参，代表要获取这个值，直接return
+            return num;
+        }
+    };
+}
+var func = foo();
+//设置值
+// func(789);
+
+//理想状态下的获取值
+var x = func();
+console.log(x);
+func(987);
+console.log(func());
