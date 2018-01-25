@@ -16,78 +16,55 @@ Marray.prototype = {
 // 
 //
 
-function foo(){
-    var obj = {
-        name:"潘文斌",
-        nickName:"文武宝宝"
-    }
-    return obj;
-}
-var obj1 = foo();
-var obj2 = foo();
-// console.log(obj1 == obj2);
-
 function foo() {
-    var num = 123;
-    return function (a) {
-        //1.如果传参数，这里的a肯定不是Undefined，所以条件判断为true
-        if (a !== undefined) {
-            num = a;
-        } else {
-            //如果不传参，代表要获取这个值，直接return
-            return num;
-        }
-    };
-}
-var func = foo();
-//设置值
-// func(789);
-
-//理想状态下的获取值
-// var x = func();
-// console.log(x);
-// func(987);
-// console.log(func());
-
-function foo() {
-    var name = "张国荣";
-    var age = 18;
-
-    return [
-        function(){
-            return name;
-        },
-        function(){
-            return age;
-        }
-    ]
-}
-
-// var getName = foo();
-// console.log(getName());
-// console.log(getName[1]());
-
-
-function foo() {
-    var name = "张国荣";
-    var age = 18;
-
+    var name = "潘明";
+    var badLevel = -1000000000000000000000000000000000;
     return {
         getName: function () {
             return name;
         },
-        getAge: function () {
-            return age;
+        setName: function (value) {
+            name = value;
+            return name;
+        },
+        getBadLevel: function () {
+            return badLevel;
+        },
+        setBadLevel: function (value) {
+            //在函数外部想要修改数据
+            //只能通过函数内部的方法
+            //我们可以在函数内部定义的这个方法里
+            //设置安全措施，校验之类的操作
+            //可以保证系统的安全性和稳定性
+            if (value > 0) {
+                throw "你敢说我坏！！！";
+            }
+
+            badLevel = value;
+            return badLevel;
         }
     }
 }
 
+//
+
 var obj = foo();
-console.log(obj.getName());
-console.log(obj.getAge());
+       
+console.log(obj.setName("高金彪"));
+// obj.setBadLevel(obj.getBadLevel() * -1 * Math.pow(10, 10000000));
+// console.log(obj.getBadLevel());
 
-var a = foo();
-console.log(a.getName());
-console.log(a.name);
+// //闭包的作用
+// //最基本的作用：可以通过闭包返回的函数或者方法，来修改函数内部的数据
+// //创建一个私有的空间，保护数据
+// //外部想要访问数据，只能通过函数提供的方法
+// //在提供的方法中，我们可以设置一些校验逻辑，让数据变得更加安全
 
-console.log(a.getName == obj.getName);
+// var name = "";
+// var age = 19;
+
+// //张二狗
+// name = "二狗";
+
+// //隔壁老王
+// name = "隔壁老王到此一游";
