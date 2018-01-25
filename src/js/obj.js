@@ -44,7 +44,44 @@ var func = foo();
 // func(789);
 
 //理想状态下的获取值
-var x = func();
-console.log(x);
-func(987);
-console.log(func());
+// var x = func();
+// console.log(x);
+// func(987);
+// console.log(func());
+
+function foo() {
+    var name = "张国荣";
+    var age = 18;
+
+    return [
+        function(){
+            return name;
+        },
+        function(){
+            return age;
+        }
+    ]
+}
+
+// var getName = foo();
+// console.log(getName());
+// console.log(getName[1]());
+
+
+function foo() {
+    var name = "张国荣";
+    var age = 18;
+
+    return {
+        getName: function () {
+            return name;
+        },
+        getAge: function () {
+            return age;
+        }
+    }
+}
+
+var obj = foo();
+console.log(obj.getName());
+console.log(obj.getAge());
