@@ -49,10 +49,11 @@ function foo() {
 //
 
 var obj = foo();
-       
-console.log(obj.setName("高金彪"));
+    //    console.log(obj.getBadLevel());
+// console.log(obj.setName("高金彪"));
 // obj.setBadLevel(obj.getBadLevel() * -1 * Math.pow(10, 10000000));
 // console.log(obj.getBadLevel());
+
 
 // //闭包的作用
 // //最基本的作用：可以通过闭包返回的函数或者方法，来修改函数内部的数据
@@ -60,11 +61,13 @@ console.log(obj.setName("高金彪"));
 // //外部想要访问数据，只能通过函数提供的方法
 // //在提供的方法中，我们可以设置一些校验逻辑，让数据变得更加安全
 
-// var name = "";
-// var age = 19;
+var name = "";
+var age = 19;
 
-// //张二狗
-// name = "二狗";
+//张二狗
+name = "二狗";
 
-// //隔壁老王
+//隔壁老王
 // name = "隔壁老王到此一游";
+
+console.log(name);
