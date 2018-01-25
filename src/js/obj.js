@@ -17,63 +17,15 @@
 //
 
 
-//1
-//        var age = 38;
-//        var obj = {
-//            age: 18,
-//            getAge: function() {
-//                console.log(this.age);
-//            }
-//        };
-
-// //        var a = obj.getAge();  //18
-//        var getAge = obj.getAge;
-//        getAge();
-
-
-// //2
-//        var age = 38;
-//        var obj = {
-//            age: 18,
-//            getAge: function() {
-
-//             //    console.log(this.age);
-
-//                function foo() {
-//                    console.log(this.age); //
-//                }
-//                foo();
-//            }
-//        };
-
-//        obj.getAge();
-
-//3
-//
-function Person(name, age) {
-    var o = {
-        name: name,
-        age: age,
-        sayHello: function () {
-
-        }
-    }
-    return o;
+function Person() {
+    this.name = "张莎";
+    this.age = 18;
 }
 
-var p = Person("张三", 18);
-console.log(p);
-
-function Person3(name, age) {
-    var o = {
-        name: name,
-        age: age,
-        sayHello: function () {
-
-        }
-    }
-    return o;
+function Student() {
+    var stu = this;
+    Person.apply(stu);
 }
 
-var p1 = new Person3();
-console.log(p1);
+var stu = new Student();
+console.log(stu);
