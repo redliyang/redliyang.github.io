@@ -85,3 +85,9 @@ function foo() {
 var obj = foo();
 console.log(obj.getName());
 console.log(obj.getAge());
+
+var a = foo();
+console.log(a.getName());
+console.log(a.name);
+
+console.log(a.getName == obj.getName);
