@@ -15,7 +15,5 @@
 // }
 // 
 
-then(XPathResult => {
-   console.log('sad');
-   
-})
+var a = new Object();
+console.log(a);
