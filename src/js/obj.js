@@ -15,7 +15,15 @@
 // }
 // 
 
-var a = new Object();
-console.log(a);
-console.log('we');
 
+for (var i = 0; i < 10; i++) {
+//    console.log(i);
+setTimeout(function () {
+    console.log(i);
+    
+},0)
+   setTimeout(function (j) {
+       console.log(j);
+       
+   }(i),0)
+}
