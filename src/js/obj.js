@@ -15,3 +15,7 @@
 // }
 // 
 
+then(XPathResult => {
+   console.log('sad');
+   
+})
