@@ -16,11 +16,9 @@
 // 
 
 
-var date = new Date();
-console.log(date);
-
-// var time = new Math();
-// console.log(time);
+var ad = '0123456789';
+console.log(ad.slice(0,1));
+console.log(ad);
 
 
-console.log(date.getDate());
+
