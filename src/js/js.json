@@ -1,0 +1,27 @@
+{
+    "Print to console": {
+        "prefix": "log",
+            "body": [
+                "console.log('$1');",
+                "$2"
+            ],
+                "description": "Log output to console"
+    },
+    "then statement": {
+        "prefix": "then",
+            "body": [
+                "then($1 => {",
+                "   $2",
+                "})"
+            ],
+                "description": "my then snippet"
+    },
+    "catch statement": {
+        "prefix": "cat",
+            "body": [
+                "catch(err => {",
+                "   $1",
+                "})"
+            ]
+    }
+}
