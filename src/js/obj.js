@@ -16,14 +16,11 @@
 // 
 
 
-for (var i = 0; i < 10; i++) {
-//    console.log(i);
-setTimeout(function () {
-    console.log(i);
-    
-},0)
-   setTimeout(function (j) {
-       console.log(j);
-       
-   }(i),0)
-}
+var date = new Date();
+console.log(date);
+
+// var time = new Math();
+// console.log(time);
+
+
+console.log(date.getDate());
