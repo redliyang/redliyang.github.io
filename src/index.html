@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
@@ -13,10 +13,10 @@
         }
 
         div {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            background-color: #ff009f;
+            width: 20px;
+            height: 20px;
+            margin: 1px;
+            background-color: #ff9f;
             color: red;
         }
     </style>
@@ -25,53 +25,81 @@
 <body>
     <div id="div1">
         <div class="a">
-            <div class="ff">asd
-                <p>1p
-                    <span>1span</span>
-                    <span>2span</span>
-                    <span>3span</span>
-                </p>
-                <p>2p
-                    <span>1span</span>
-                    <span>2span</span>
-                    <span>3span</span>
-                </p>
-                <p>3p
-                    <span>1span</span>
-                    <span>2span</span>
-                    <span>3span</span>
-                </p>
-                <p>4p
-                    <span>1span</span>
-                    <span>2span</span>
-                    <span>3span</span>
-                </p>
-                <p>5p
-                    <span>1span</span>
-                    <span>2span</span>
-                    <span>3span</span>
-                </p>
-            </div>
-            <div class="ff">asd</div>
-            <div class="ff">asd</div>
-            <div class="ff">asd</div>
-            <div class="a">
-                <div class="ff">asssd</div>
-                <div class="ff">asssd</div>
-                <div class="ff">assddd</div>
-                <div class="ff">asssd</div>
-            </div>
-        </div>
-        <div class="a">
             <div class="ff">asd</div>
             <div class="ff">asd</div>
             <div class="ff">asd</div>
             <div class="ff">asd</div>
         </div>
-        
     </div>
 </body>
 
 </html>
 <!-- <script src="../js/jquery-1.12.2.js"></script> -->
 <script src="../js/jquery.js"></script>
+<script src="../js/jquery-core.js"></script>
+<script>
+    $.fn.extend({
+        empty : function () {
+            // for (var i = 0; i < this.length; i++) {
+            //    this[i].innerHTML = '';
+            // }
+
+            this.each(function () {
+                this.innerHTML = '';
+            });
+
+            return this;
+        },
+        remove : function () {
+            // for (var i = 0; i < this.length; i++) {
+            //    this[i].parentNode.removeChild(this[i]);
+            // }
+            this.each(function () {
+                this.parentNode.removeChild(this);
+            });
+
+            return this;
+        },
+        html : function (html) {
+            if (arguments.length === 0) {
+                return this[0].innerHTML;
+            }
+            else if (arguments.length >= 1) {
+                // for (var i = 0; i < this.length; i++) {
+                //    this[i].innerHTML = html;
+                // }
+                this.each(function () {
+                    this.innerHTML = html;
+                });
+            }
+
+            return this;
+        },
+        text : function (text) {
+            var result = '';
+            if (arguments.length === 0) {
+                // for (var i = 0, len = this.length; i < len; i++) {
+                //    result += this[i].innerText;
+                // }
+                this.each(function () {
+                    result += this.innerText;
+                });
+                return result;
+            }
+            else {
+                // for (var i = 0, len = this.length; i < len; i++) {
+                //    this[i].innerText = text;
+                // }
+                this.each(function () {
+                    this.innerText = text;
+                });
+            }
+
+            return this;
+        },
+        appendTo : function (selector) {
+            
+        }
+    });
+    console.log($('div').text('sdsad'));
+</script>

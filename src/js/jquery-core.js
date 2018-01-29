@@ -2,7 +2,7 @@
 $.fn.extend({
 
     // 获取版本号
-    jquery: version,
+    jquery: '1.0.0' ,
 
     // 代表所有实例默认的选择器，也代表实例是一个jQuery类型的对象
     selector: '',
