@@ -1,0 +1,18 @@
+{
+    "Print to console": {
+        "prefix": "clg",
+        "body": [
+            "console.log($1);$2"
+        ],
+        "description": "Log output to console"
+    },
+    "for statement": {
+        "prefix": "for",
+        "body": [
+            "for (var i = 0, len = $1; i < len; i++) {",
+            "   $2",
+            "}"
+        ],
+        "description": "my for snippet"
+    }
+}
