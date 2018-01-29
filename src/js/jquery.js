@@ -59,7 +59,7 @@
 
             return obj;
         },
-
+        
         // map实现
         map: function (obj, fn) {
 
