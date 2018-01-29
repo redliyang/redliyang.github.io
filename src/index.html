@@ -23,83 +23,21 @@
 </head>
 
 <body>
-    <div id="div1">
-        <div class="a">
-            <div class="ff">asd</div>
-            <div class="ff">asd</div>
-            <div class="ff">asd</div>
-            <div class="ff">asd</div>
-        </div>
-    </div>
+    <p>00</p>
+    <span>我是span</span>
+    <ul>
+        <li>11111</li>
+        <li>1222</li>
+        <li>133333</li>
+        <li>14444</li>
+    </ul>
 </body>
 
 </html>
 <!-- <script src="../js/jquery-1.12.2.js"></script> -->
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-core.js"></script>
+<script src="../js/jquery-dom.js"></script>
 <script>
-    $.fn.extend({
-        empty : function () {
-            // for (var i = 0; i < this.length; i++) {
-            //    this[i].innerHTML = '';
-            // }
-
-            this.each(function () {
-                this.innerHTML = '';
-            });
-
-            return this;
-        },
-        remove : function () {
-            // for (var i = 0; i < this.length; i++) {
-            //    this[i].parentNode.removeChild(this[i]);
-            // }
-            this.each(function () {
-                this.parentNode.removeChild(this);
-            });
-
-            return this;
-        },
-        html : function (html) {
-            if (arguments.length === 0) {
-                return this[0].innerHTML;
-            }
-            else if (arguments.length >= 1) {
-                // for (var i = 0; i < this.length; i++) {
-                //    this[i].innerHTML = html;
-                // }
-                this.each(function () {
-                    this.innerHTML = html;
-                });
-            }
-
-            return this;
-        },
-        text : function (text) {
-            var result = '';
-            if (arguments.length === 0) {
-                // for (var i = 0, len = this.length; i < len; i++) {
-                //    result += this[i].innerText;
-                // }
-                this.each(function () {
-                    result += this.innerText;
-                });
-                return result;
-            }
-            else {
-                // for (var i = 0, len = this.length; i < len; i++) {
-                //    this[i].innerText = text;
-                // }
-                this.each(function () {
-                    this.innerText = text;
-                });
-            }
-
-            return this;
-        },
-        appendTo : function (selector) {
-            
-        }
-    });
-    console.log($('div').text('sdsad'));
+    // console.log($('li').prependTo($('span')));
 </script>
