@@ -112,5 +112,5 @@ $.fn.extend({
     // 所以这里不需要通过call和apply改变this指向即可借用数组的方法
     push: [].push,
     sort: [].sort,
-    splice: [].splice
+    splice: [].splice,
 })

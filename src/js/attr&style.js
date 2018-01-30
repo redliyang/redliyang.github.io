@@ -85,21 +85,17 @@ $.fn.extend({
         }
         return this
     },
+    val(value) {
+        return (arguments.length === 0) ? this.prop('value') : this.prop('value', value)
+    },
 })
 
-const json = {
-    name: '2',
-    val: 2,
-}
-const cssA = {
-    fontSize: '26px',
-    fontWeight: 'bold',
-}
-// console.log($('#checkbox').prop({ checked: true, name: 'liyang' }))
-// console.log($('#checkbox')[1])
-// console.log($('p').prop('213'))
-// console.log($('p').attr('name', 'liyang'))
-// const pDom = $('p')[0]
-// console.log(pDom)
-// console.log($('p').css('color'))
-// console.log($('p').css(cssA))
+// const json = {
+//     name: '2',
+//     val: 2,
+// }
+// const cssA = {
+//     fontSize: '26px',
+//     fontWeight: 'bold',
+// }
+console.log($('#ee').val('liyang nihao'))
