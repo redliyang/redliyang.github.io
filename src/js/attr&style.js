@@ -88,6 +88,20 @@ $.fn.extend({
     val(value) {
         return (arguments.length === 0) ? this.prop('value') : this.prop('value', value)
     },
+    hasClass(className) {
+        let has = false
+        if (typeof className === 'string') {
+            jQuery.each(this, (thisK, thisV) => {
+                const dom = thisV
+                if ((` ${dom.className} `).indexOf(` ${className} `) > -1) {
+                    has = true
+                    return false
+                }
+                return true
+            })
+        }
+        return has
+    },
 })
 
 // const json = {
@@ -98,4 +112,6 @@ $.fn.extend({
 //     fontSize: '26px',
 //     fontWeight: 'bold',
 // }
-console.log($('#ee').val('liyang nihao'))
+// console.log($('#ee').val('liyang nihao'))
+console.log($('div'))
+console.log($('div').hasClass('abc'))
