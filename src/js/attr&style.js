@@ -53,7 +53,6 @@ $.fn.extend({
         } else if (arguments.length === 2) {
             jQuery.each(this, (thisK, thisV) => {
                 const dom = thisV
-                console.log(dom)
                 dom[attr] = bool
             })
         }
@@ -102,16 +101,49 @@ $.fn.extend({
         }
         return has
     },
+    addClass(classNames) {
+        const classNameArr = jQuery.trim(classNames).split(' ')
+        jQuery.each(this, (key, dom) => {
+            const $self = jQuery(dom)
+            jQuery.each(classNameArr, (index, val) => {
+                if (!$self.hasClass(val)) {
+                    $self[0].className += ` ${val}`
+                    $self[0].className = jQuery.trim($self[0].className)
+                }
+            })
+        })
+        return this
+    },
+    removeClass(classNames) {
+        if (arguments.length === 0) {
+            jQuery.each(this, (key, dom) => {
+                const self = dom
+                self.className = ''
+            })
+        } else {
+            const classNameArr = jQuery.trim(classNames).split(' ')
+            jQuery.each(this, (key, dom) => {
+                const self = dom
+                jQuery.each(classNameArr, (index, val) => {
+                    self.className = self.className.replace(new RegExp(`\\b${val}\\b`), '')
+                    self.className = jQuery.trim(self.className)
+                })
+            })
+        }
+        return this
+    },
+    toggleClass(classNames) {
+        const classNameArr = jQuery.trim(classNames).split(' ')
+        jQuery.each(this, (key, dom) => {
+            const $self = jQuery(dom)
+            jQuery.each(classNameArr, (index, val) => {
+                if ($self.hasClass(val)) {
+                    $self.removeClass(val)
+                } else {
+                    $self.addClass(val)
+                }
+            })
+        })
+        return this
+    },
 })
-
-// const json = {
-//     name: '2',
-//     val: 2,
-// }
-// const cssA = {
-//     fontSize: '26px',
-//     fontWeight: 'bold',
-// }
-// console.log($('#ee').val('liyang nihao'))
-console.log($('div'))
-console.log($('div').hasClass('abc'))
