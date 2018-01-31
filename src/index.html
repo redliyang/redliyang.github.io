@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
     <style>
         p {
             background-color: red;
-            color:blue;
-            
+            color: blue;
+
         }
     </style>
 </head>
+
 <body>
     <input type="text" name="ll" id="i1" value="5">
     <input type="text" name="ll" id="i2" value="4">
@@ -24,15 +26,20 @@
     <div id="message" class="test" data_id="123">fsedg</div>
     <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
-    </div><div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
+    </div>
+    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
-    </div><div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
+    </div>
+    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
-    </div><div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
+    </div>
+    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
-    </div><div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
+    </div>
+    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
-    </div><div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
+    </div>
+    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
         <span>span1</span>
     </div>
     <ul>
@@ -42,14 +49,45 @@
         <li>4</li>
     </ul>
 </body>
+
 </html>
-<script src="js/main.js"></script>
+<script src="js/jquery-2.2.0.js"></script>
+<!-- <script src="js/main.js"></script>
 <script src="js/static.js"></script>
 <script src="js/core.js"></script>
 <script src="js/dom.js"></script>
 <script src="js/attr&style.js"></script>
 <script src="js/event.js"></script>
-<script src="js/ajax.js"></script>
+<script src="js/ajax.js"></script> -->
 <script>
-    
+    // var xhr = new XMLHttpRequest()
+    // xhr.open('get', './test/test.js')
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4) {
+    //         console.log('请求失败了')
+    //         if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+    //             console.log(xhr.responseText)
+    //             console.log(typeof xhr.responseText)
+    //         } else {
+    //         }
+    //     }
+    // }
+
+    $.ajax({
+            url: './test/test.json',
+            data: {
+                name: '张三',
+                age: 18
+            },
+            complete: function () {
+                console.log('请求完成了');
+            },
+            success: function (data) {
+                console.log(data);
+                console.log(typeof data);
+            },
+            error: function () {
+                console.log('发生错误了');
+            }
+        });
 </script>
