@@ -162,20 +162,4 @@ $.extend({
         })
     },
 })
-// console.log($.urlStringify($.ajaxSettings))
-$.get('../js/a.json', (data) => {
-    console.log(data)
-})
 
-// $.ajax({
-//     url: '../js/main.js',
-//     dataType: 'script',
-//     data: {
-//         name: '张三',
-//         age: 18,
-//     },
-//     success(data) {
-//         console.log(data)
-//         console.log(typeof data)
-//     },
-// })
