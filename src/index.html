@@ -57,37 +57,10 @@
 <script src="js/core.js"></script>
 <script src="js/dom.js"></script>
 <script src="js/attr&style.js"></script>
-<script src="js/event.js"></script>
-<script src="js/ajax.js"></script> -->
+<script src="js/event.js"></script> -->
+<!-- <script src="js/ajax.js"></script> -->
 <script>
-    // var xhr = new XMLHttpRequest()
-    // xhr.open('get', './test/test.js')
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4) {
-    //         console.log('请求失败了')
-    //         if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
-    //             console.log(xhr.responseText)
-    //             console.log(typeof xhr.responseText)
-    //         } else {
-    //         }
-    //     }
-    // }
-
-    $.ajax({
-            url: './test/test.json',
-            data: {
-                name: '张三',
-                age: 18
-            },
-            complete: function () {
-                console.log('请求完成了');
-            },
-            success: function (data) {
-                console.log(data);
-                console.log(typeof data);
-            },
-            error: function () {
-                console.log('发生错误了');
-            }
-        });
+    $.get('js/a.json', function (data) {
+        console.log(data)
+    })
 </script>
