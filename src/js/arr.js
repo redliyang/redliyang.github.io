@@ -7,13 +7,13 @@ $.fn.extend({
     map(fn) {
         return jQuery.map(this, fn)
     },
-    // 截取实例的部分元素，构成一个新的jQuery实例返回
-    slice() {
-        return jQuery([].slice.apply(this, arguments))
-    },
     // 把实例转换为数组返回
     toArray() {
         return [].slice.call(this)
+    },
+    // 截取实例的部分元素，构成一个新的jQuery实例返回
+    slice() {
+        return jQuery([].slice.apply(this, arguments))
     },
     // 原型上的方法供实例调用，
     // 即实例.push，在调用过程中，push内的this就指向了实例，

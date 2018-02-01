@@ -1,116 +1,88 @@
-// 给原型扩展DOM操作方法，这样jQ实例就可以使用了
-$.fn.extend({
+(function (w) {
+    // 工厂
+    function jQuery(selector) {
+        return new jQuery.fn.init(selector)
+    }
 
-    // 获取版本号
-    jquery: '1.0.0',
+    // 替换原型 + 原型简称
+    jQuery.fn = jQuery.prototype = {
+        constructor: jQuery,
+    }
 
-    // 代表所有实例默认的选择器，也代表实例是一个jQuery类型的对象
-    selector: '',
+    // 给jQuery和原型分别添加extend方法
+    jQuery.extend = jQuery.fn.extend = function (obj) {
+        let i = 1
+        let target = arguments[0]
 
-    // 代表所有实例默认的长度
-    length: 0,
-
-    // 把实例转换为数组返回
-    toArray: function () {
-        return [].slice.call(this);
-    },
-
-    // 获取指定下标的元素，获取的是原生DOM
-    get: function (i) {
-        /*
-         * 1、如果传入null或undefined，那么转换为数组返回
-         * 2、如果传入的是正数，按照指定的下标获取元素返回
-         * 3、如果传入的是负数，按照下标倒着( this.length + 负数 )获取元素返回
-         * */
-
-        // null、undeinfed
-        if (i == null) {
-            return this.toArray();
+        if (arguments.length === 1) {
+            target = this
+            i = 0
         }
 
-        // 其他
-        if (i >= 0) {
-            return this[i];
-        } else {
-            return this[this.length + i];
+        // 遍历得到后面所有的对象
+        for (; i < arguments.length; i++) {
+            // 遍历每一个对象所有的属性
+            for (const key in arguments[i]) {
+                target[key] = arguments[i][key]
+            }
         }
-    },
+        // 给谁混入返回谁
+        return target
+    }
 
-    _get: function (i) {
-        return i == null ?
-            this.toArray() :
-            (i >= 0 ? this[i] : this[this.length + i]);
-    },
-
-    // 遍历实例
-    each: function (fn) {
-        return jQuery.each(this, fn);
-    },
-
-    // 通过实例得到一个新数组
-    map: function (fn) {
-        return jQuery.map(this, fn);
-    },
-
-    // 截取实例的部分元素，构成一个新的jQuery实例返回
-    slice: function () {
-        /*
-         * 1、通过数组的slice截取部分元素(slice返回的是数组)，
-         * 2、把截取到的元素转换为实例对象返回。
-         * */
-
-        // 因为slice的参数会有变化，所以需要是arguments，
-        // 我们要把arguments中的每一项传给数组的slice，所以需要借用apply平铺传递过去，
-        // 最后把slice返回数组，通过jQuery工厂保证成实例返回。
-        var nodes = [].slice.apply(this, arguments);
-        return jQuery(nodes);
-    },
-
-    _slice: function () {
-        // 因为slice的参数会有变化，所以需要是arguments，
-        // 我们要把arguments中的每一项传给数组的slice，所以需要借用apply平铺传递过去，
-        // 最后把slice返回数组，通过jQuery工厂保证成实例返回。
-        return jQuery([].slice.apply(this, arguments));
-    },
-
-    // 获取指定下标的元素，获取的是jQuery类型的实例对象。
-    eq: function (i) {
-        /*
-         * 1、如果传入null或undefined，返回一个新实例，
-         * 2、如果传入的是正数，按照指定的下标获取元素，再包装成新实例返回
-         * 3、如果传入的是负数，按照下标倒着( this.length + 负数 )获取元素，再包装成新实例返回
-         * */
-
-        // null、undefined得到新实例
-        if (i == null) {
-            return jQuery();
+    // 这是真正的构造函数，同时把构造函数放在了原型中
+    const init = jQuery.fn.init = function (selector) {
+        // null、undefined、NaN、0、false、''
+        if (!selector) {
+            return this
         }
 
-        if (i >= 0) {
-            return jQuery(this[i]);
-        } else {
-            return jQuery(this[this.length + i]);
+        // function
+        if (jQuery.isFunction(selector)) {
+            // 打包给ready静态方法处理
+            jQuery.ready(selector)
         }
-    },
 
-    _eq: function (i) {
-        return i == null ? jQuery() : jQuery(this.get(i));
-    },
+        // string ==> ( html || selector )
+        else if (jQuery.isString(selector)) {
+            // 为了用户友好体验，先去掉首尾空白字符
+            selector = jQuery.trim(selector)
 
-    // 获取实例中的第一个元素，是jQuery类型的实例对象。
-    first: function () {
-        return this.eq(0);
-    },
+            // html
+            if (jQuery.isHTML(selector)) {
+                // 利用一个临时的div来创建DOM，
+                // 然后把创建好的DOM依次push给实例。
+                const tempDiv = document.createElement('div')
+                tempDiv.innerHTML = selector;
+                [].push.apply(this, tempDiv.childNodes)
+            }
 
-    // 获取实例中的最后一个元素，是jQuery类型的实例对象。
-    last: function () {
-        return this.eq(-1);
-    },
+            // selector
+            else {
+                try {
+                    [].push.apply(this, document.querySelectorAll(selector))
+                } catch (e) {
+                    // 如果报错了，那么手动补一个length属性，代表没有获取到任何元素
+                    this.length = 0
+                }
+            }
+        }
 
-    // 原型上的方法供实例调用，
-    // 即实例.push，在调用过程中，push内的this就指向了实例，
-    // 所以这里不需要通过call和apply改变this指向即可借用数组的方法
-    push: [].push,
-    sort: [].sort,
-    splice: [].splice,
-})
+        // array || likeArray
+        else if (jQuery.isLikeArray(selector)) {
+            [].push.apply(this, [].slice.call(selector))
+        }
+
+        // 其它
+        else {
+            this[0] = selector
+            this.length = 1
+        }
+    }
+
+    // 替换init的原型为工厂的原型，这样外界就可以通过工厂给实例扩展方法
+    init.prototype = jQuery.fn
+
+    // 暴露工厂和工厂的简称
+    w.jQuery = w.$ = jQuery
+}(window))
