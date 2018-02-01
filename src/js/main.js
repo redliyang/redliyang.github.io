@@ -11,32 +11,24 @@
 
     // 给jQuery和原型分别添加extend方法
     jQuery.extend = jQuery.fn.extend = function (obj) {
-        let i = 1,
-            key,
-            arg = arguments,
-            target = arg[0],
-            argLen = arg.length
+        let i = 1
+        let target = arguments[0]
 
-        if (argLen === 1) {
+        if (arguments.length === 1) {
             target = this
             i = 0
         }
 
         // 遍历得到后面所有的对象
-        for (; i < argLen; i++) {
+        for (; i < arguments.length; i++) {
             // 遍历每一个对象所有的属性
-            for (key in arg[i]) {
-                target[key] = arg[i][key]
+            for (const key in arguments[i]) {
+                target[key] = arguments[i][key]
             }
         }
         // 给谁混入返回谁
         return target
     }
-
-    // 给jQuery添加一些静态方法
-    jQuery.extend({
-        //
-    })
 
     // 这是真正的构造函数，同时把构造函数放在了原型中
     const init = jQuery.fn.init = function (selector) {
