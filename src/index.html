@@ -6,23 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        p {
-            background-color: red;
-            color: blue;
-
-        }
-    </style>
+    <link rel="stylesheet" href="css/demo.css">
 </head>
 
 <body>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
-    <li>班长今天老帅了，嗷嗷帅...</li>
+<div class="wrap">
+     <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>课程名称</th>
+                <th>所属学院</th>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>JavaScript</td>
+                <td>前端与移动开发学院</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>css</td>
+                <td>前端与移动开发学院</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>html</td>
+                <td>前端与移动开发学院</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" checked='checked' />
+                </td>
+                <td>jQuery</td>
+                <td>前端与移动开发学院</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 
 </html>
@@ -36,24 +66,8 @@
 <script src="js/event.js"></script>
 <script src="js/ajax.js"></script>
 <script>
+        // console.log($('input[type=checkbox]').length)
+        // console.log($('input:checked').length)
+        // console.log($('input').prop('checked', true))
     
-    var obj = {
-            "name": "王二麻子",
-            "age": 16,
-            "setName": function (name = 'liayng') {
-                this.name = name;
-                console.log(this.name);
-                return this;
-            },
-            "addAge": function () {
-                this.age++;
-                console.log(this.age);
-                return this;
-            }
-        };
-
-        // 调用对象的 方法（难）
-        // obj.setName("屯").addAge();
-        obj.setName()
-        console.log(obj.name)
 </script>

@@ -32,6 +32,10 @@ $.fn.extend({
         }
         return this
     },
+    // 删除元素的属性节点值
+    removeAttr(attr) {
+        this.attr(attr, '')
+    },
     prop(attr, bool) {
         // 不是字符串 也不是对象 或者三个及以上实参，直接返回this
         if (!jQuery.isString(attr) && !jQuery.isObject(attr) && arguments.length >= 3) {

@@ -1,0 +1,66 @@
+@import 'main.scss';
+
+// 混合宏
+@mixin border-radius($radius:50%) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// 全局变量 + 默认变量
+$hoverColor: #fafafa !default;
+
+// 继承 + 占位符（不被继承就不编译）
+%mt5 {
+    border: 1px solid #d0d0d0;
+    padding: 10px;
+}
+
+// font: 10px/8px;             // 纯 CSS，不是除法运算
+// width: $width/2;            // 使用了变量，是除法运算
+// width: round(1.5)/2;        // 使用了函数，是除法运算
+// height: (500px/2);          // 使用了圆括号，是除法运算
+// margin-left: 5px + 8px/2px; // 使用了加（+）号，是除法运算
+
+.wrap {
+
+    // 调用混合宏
+    @include border-radius(50%);
+
+    // 加法 + 乘法 + 除法
+    width: (400px/2) + 50px * 2;
+    margin: 100px auto 0;
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+        thead {
+            tr {
+                background-color: #0099cc;
+                th {
+                    color: #fff;
+                    font: bold 16px "微软雅黑";
+
+                    // 调用继承
+                    @extend %mt5;
+                }
+            }
+        }
+        tbody {
+            tr {
+                background-color: #f0f0f0;
+                &:hover {
+                    // 局部变量
+                    $hoverColor: red; 
+                    
+                    background-color: $hoverColor;
+                    cursor: pointer;
+                }
+                td {
+                    color: #404060;
+                    font: 14px "微软雅黑";
+                    @extend %mt5;
+                }
+            }
+        }
+    }
+}
