@@ -10,49 +10,8 @@
 </head>
 
 <body>
-<div class="wrap">
-     <table>
-        <thead>
-            <tr>
-                <th>
-                    <input type="checkbox" id="j_cbAll" />
-                </th>
-                <th>课程名称</th>
-                <th>所属学院</th>
-            </tr>
-        </thead>
-        <tbody id="j_tb">
-            <tr>
-                <td>
-                    <input type="checkbox" />
-                </td>
-                <td>JavaScript</td>
-                <td>前端与移动开发学院</td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" />
-                </td>
-                <td>css</td>
-                <td>前端与移动开发学院</td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" />
-                </td>
-                <td>html</td>
-                <td>前端与移动开发学院</td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" checked='checked' />
-                </td>
-                <td>jQuery</td>
-                <td>前端与移动开发学院</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <button>运动到400然后回来</button>
+    <div></div>
 </body>
 
 </html>
@@ -65,9 +24,21 @@
 <script src="js/attr&style.js"></script>
 <script src="js/event.js"></script>
 <script src="js/ajax.js"></script>
+<script src="js/animation.js"></script>
 <script>
-        // console.log($('input[type=checkbox]').length)
-        // console.log($('input:checked').length)
-        // console.log($('input').prop('checked', true))
-    
+    // btnArr[0].onclick = function () {
+    //     animate(div, json1);
+    // }
+    var json1 = {
+        "left": 300,
+        "top": 200,
+        "width": 300,
+        "height": 200,
+        "opacity": 30,
+        "zIndex": 1
+    };
+    $('button').click(function () {
+ console.log($('div').animate(json1))
+    })
+
 </script>
