@@ -38,7 +38,7 @@ $.fn.extend({
                 // 四部
                 let leader = (attr === 'opacity') ?
                     (jQuery.getStyle(ele, attr) * 100 || 1) :
-                    (parseInt(jQuery.getStyle(ele, attr), 2) || 0)
+                    (parseInt(jQuery.getStyle(ele, attr), 10) || 0)
                 // 判断如果属性为opacity的时候特殊获取值
                 // if (attr === 'opacity') {
                 //     leader = jQuery.getStyle(ele, attr) * 100 || 1
