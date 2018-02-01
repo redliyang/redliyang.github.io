@@ -16,38 +16,13 @@
 </head>
 
 <body>
-    <input type="text" name="ll" id="i1" value="5">
-    <input type="text" name="ll" id="i2" value="4">
-    <input type="text" name="ll" id="i3" value="6">
-    <!-- <input type="text" name="ll" id="ee" value="9">
-    <input type="checkbox" name="1" id="checkbox">
-    <input type="checkbox" name="2" id="checkbox" checked="checked">
-    <input type="checkbox" name="3" id="checkbox" checked="checked"> -->
-    <div id="message" class="test" data_id="123">fsedg</div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <div id="aa" class="a b c abc aa bb cc aabbcc p" index="0">
-        <span>span1</span>
-    </div>
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-    </ul>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
+    <li>班长今天老帅了，嗷嗷帅...</li>
 </body>
 
 </html>
@@ -61,7 +36,24 @@
 <script src="js/event.js"></script>
 <script src="js/ajax.js"></script>
 <script>
-    console.log($('input').toArray())
-    let arr = [1,2]
-    console.log(arr.pop())
+    
+    var obj = {
+            "name": "王二麻子",
+            "age": 16,
+            "setName": function (name = 'liayng') {
+                this.name = name;
+                console.log(this.name);
+                return this;
+            },
+            "addAge": function () {
+                this.age++;
+                console.log(this.age);
+                return this;
+            }
+        };
+
+        // 调用对象的 方法（难）
+        // obj.setName("屯").addAge();
+        obj.setName()
+        console.log(obj.name)
 </script>

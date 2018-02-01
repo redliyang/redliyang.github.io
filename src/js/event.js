@@ -65,6 +65,9 @@ $.fn.extend({
         })
         return this
     },
+    hover(fnOver, fnOut) {
+        return this.mouseenter(fnOver).mouseleave(fnOut || fnOver)
+    },
 })
 const events = 'blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu'.split(' ')
 jQuery.each(events, (index, eventName) => {
