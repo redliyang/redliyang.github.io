@@ -1,0 +1,53 @@
+{
+	/*
+	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Print to console": {
+		"prefix": "clg",
+		"body": [
+			"console.log($1)$2"
+		],
+		"description": "Log output to console"
+	},
+	"for statement": {
+		"prefix": "for",
+		"body": [
+			"for (var i = 0, len = $1; i < len; i++) {",
+			"   $2",
+			"}"
+		],
+		"description": "my for snippet"
+	},
+	"jteach statement": {
+		"prefix": "jteach",
+		"body": [
+			"jQuery.each(this, (key, dom) => {",
+			"    const self = dom",
+			"    $1",
+			"})"
+		],
+		"description": "my jteach snippet"
+	},
+	"joeach statement": {
+		"prefix": "joeach",
+		"body": [
+			"jQuery.each($1, ($2, $3) => {",
+			"    const $4 = $3",
+			"    $5",
+			"})"
+		],
+		"description": "my joeach snippet"
+	}
+}

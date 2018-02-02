@@ -1,0 +1,37 @@
+{
+    "editor.tabSize": 2,
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/CVS": true,
+        "**/node_modules": true,
+        "**/bower_compoents": true,
+        "**/dist": true,
+        "**/_sass": true,
+        "**/_layouts": true,
+        "**/css": true,
+        "**/js": true,
+        "**/page": true,
+        "**/_includes": true,
+        "index.html": true,
+        "LICENSE": true,
+        "README.md": true,
+        "_config.yml": true,
+        "feed.xml": true,
+        "favicon.ico": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/_posts": true,
+        "**/snippets": true,
+        ".eslintrc.json": true,
+        ".gitignore": true,
+        "gulpfile.js": true,
+        "package.json": true
+    },
+    "files.trimFinalNewlines": true,
+}
