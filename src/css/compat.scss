@@ -1,0 +1,6 @@
+@mixin opacity($val: 1 ) {
+    filter: alpha(opacity = $val * 100);
+    -moz-opacity: $val;
+    -khtml-opacity: $val;
+    opacity: $val;
+}

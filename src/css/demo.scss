@@ -1,5 +1,7 @@
 // 导入
 @import 'main.scss';
+@import 'compat.scss';
+
 // 混合宏
 @mixin border-radius($radius:50%) {
     -webkit-border-radius: $radius;
@@ -36,11 +38,11 @@ $hoverColor: #fafafa !default;
 //     }
 // }
 div {
-  position: absolute;
+    position: absolute;
     top: 40px;
     left: 10px;
     width: 100px;
-    opacity: 0.6;
     height: 100px;
     background-color: pink;
+    @include opacity(0.6);
 }
