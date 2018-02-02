@@ -6,6 +6,7 @@
 %mt5 {
     border: 1px solid #d0d0d0;
     padding: 10px;
+    color: red;
 }
 
 // 全局变量 + 默认变量
@@ -31,7 +32,8 @@ $hoverColor: #fafafa !default;
 //         @extend %mt5;
 //     }
 // }
-div {
+
+.ttdiv {
     position: absolute;
     top: 40px;
     left: 10px;

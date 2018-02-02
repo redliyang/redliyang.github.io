@@ -34,4 +34,9 @@
         "package.json": true
     },
     "files.trimFinalNewlines": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
 }
