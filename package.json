@@ -15,7 +15,9 @@
     "eslint": "^4.16.0",
     "gulp-sass": "^3.1.0",
     "gulp-plumber":"^1.2.0",
-    "gulp-notify": "^3.2.0"
+    "gulp-notify": "^3.2.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
