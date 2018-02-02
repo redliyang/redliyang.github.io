@@ -4,3 +4,8 @@
     -khtml-opacity: $val;
     opacity: $val;
 }
+
+@mixin border-radius($radius:50%) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}

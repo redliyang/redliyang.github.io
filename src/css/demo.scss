@@ -2,12 +2,6 @@
 @import 'main.scss';
 @import 'compat.scss';
 
-// 混合宏
-@mixin border-radius($radius:50%) {
-    -webkit-border-radius: $radius;
-    border-radius: $radius;
-}
-
 // 继承 + 占位符（不被继承就不编译）
 %mt5 {
     border: 1px solid #d0d0d0;
@@ -45,4 +39,5 @@ div {
     height: 100px;
     background-color: pink;
     @include opacity(0.6);
+    @include border-radius(50%);
 }
