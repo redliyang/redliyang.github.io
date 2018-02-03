@@ -72,7 +72,7 @@ $hoverColor: #fafafa !default;
 .wrapper {
     @include WidthHeight(298px, 248px);
     margin: 100px auto 0;
-    border: 1px solid pink;
+    border: 1px solid pink;/*  */
     overflow: hidden;
 }
 

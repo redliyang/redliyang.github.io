@@ -1,0 +1,23 @@
+// Empty
+[
+    {
+        "key": "shift+alt+a",
+        "command": "git.commitAll"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "git.push"
+    },
+    {
+        "key": "shift+alt+u",
+        "command": "syncing.uploadSettings"
+    },
+    {
+        "key": "shift+alt+s",
+        "command": "syncing.openSettings"
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "syncing.downloadSettings"
+    }
+]
