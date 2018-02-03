@@ -99,6 +99,11 @@ $hoverColor: #fafafa !default;
     }
 }
 
+.wrapper .tab .tab-item.active {
+    border-bottom: 0;
+    border-color: red;
+}
+
 .wrapper .products {
     @include WidthHeight(998px, 456px);
     border: 1px solid #ddd;
@@ -109,11 +114,6 @@ $hoverColor: #fafafa !default;
     }
 }
 
-.wrapper .mian.selected {
+.wrapper .products .mian.selected {
     display: block;
-}
-
-.wrapper .tab-item.active {
-    border-bottom: 0;
-    border-color: red;
 }
