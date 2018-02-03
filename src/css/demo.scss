@@ -82,7 +82,25 @@ $hoverColor: #fafafa !default;
     float: left;
 }
 
-#right #left li a {
-    display: block;
-    @include WidthHeight(48px, 27px);
+#right li,
+#left li {
+    background-color: blue;
+
+    a {
+        display: block;
+        border-bottom: 1px solid pink;
+        line-height: 27px;
+        text-align: center;
+        color: black;
+        @include WidthHeight(48px, 27px);
+
+        &:hover {
+            background-color: red;
+        }
+    }
+}
+
+#center {
+    border-left: 1px solid pink;
+    border-right: 1px solid pink;
 }
