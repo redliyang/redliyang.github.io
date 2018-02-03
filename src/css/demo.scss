@@ -1,7 +1,6 @@
 // 导入
 @import 'main.scss';
 @import 'compat.scss';
-
 // 继承 + 占位符（不被继承就不编译）
 %mt5 {
     border: 1px solid #d0d0d0;
@@ -32,7 +31,6 @@ $hoverColor: #fafafa !default;
 //         @extend %mt5;
 //     }
 // }
-
 @mixin WidthHeight($w, $h) {
     width: $w;
     height: $h;
@@ -71,14 +69,19 @@ $hoverColor: #fafafa !default;
     margin: 0 $w $w 0;
 }
 
+.wrapper {
+    @include WidthHeight(298px, 248px);
+    margin: 100px auto 0;
+    border: 1px solid pink;
+    overflow: hidden;
+}
 
-.ttdiv {
-    position: absolute;
-    top: 40px;
-    left: 10px;
-    width: 100px;
-    height: 500px;
-    background-color: pink;
-    @include opacity(0.6);
-    @include border-radius(50%);
+#left,
+#center,
+#right {
+    float: left;
+}
+#right #left li a {
+    display: block;
+    @include WidthHeight(48px, 27px);
 }
