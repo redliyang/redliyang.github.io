@@ -81,6 +81,7 @@ $hoverColor: #fafafa !default;
 #right {
     float: left;
 }
+
 #right #left li a {
     display: block;
     @include WidthHeight(48px, 27px);
