@@ -7,9 +7,10 @@
       true,
       {
         "ignoreAtRules": [
-          "@extend",
-          "@import",
-          "@mixin",
+          "extend",
+          "import",
+          "mixin",
+          "include",
           "ignores"
         ]
       }
