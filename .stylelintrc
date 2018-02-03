@@ -19,7 +19,8 @@
     "unit-whitelist": [
       "em",
       "rem",
-      "s"
+      "s",
+      "px"
     ]
   }
 }
