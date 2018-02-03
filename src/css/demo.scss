@@ -33,6 +33,44 @@ $hoverColor: #fafafa !default;
 //     }
 // }
 
+@mixin WidthHeight($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin poaTopLeft($w, $h) {
+    position: absolute;
+    top: $w;
+    left: $h;
+}
+
+@mixin poaTopRight($w, $h) {
+    position: absolute;
+    top: $w;
+    right: $h;
+}
+
+@mixin poaBottomLeft($w, $h) {
+    position: absolute;
+    bottom: $w;
+    left: $h;
+}
+
+@mixin poaBottomRight($w, $h) {
+    position: absolute;
+    bottom: $w;
+    right: $h;
+}
+
+@mixin pingJunFengGeParBox($w) {
+    padding: $w 0 0 $w;
+}
+
+@mixin pingJunFengGeChiBox($w) {
+    float: left;
+    margin: 0 $w $w 0;
+}
+
 
 
 .ttdiv {
