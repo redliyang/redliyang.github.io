@@ -69,38 +69,13 @@ $hoverColor: #fafafa !default;
     margin: 0 $w $w 0;
 }
 
+@mixin textCenter($w, $h) {
+    width: $w;
+    height: $h;
+    line-height: $h;
+    text-align: center;
+}/*  */
+
 .wrapper {
-    @include WidthHeight(298px, 248px);
-    margin: 100px auto 0;
-    border: 1px solid pink;/*  */
-    overflow: hidden;
-}
-
-#left,
-#center,
-#right {
-    float: left;
-}
-
-#right li,
-#left li {
-    background-color: blue;
-
-    a {
-        display: block;
-        border-bottom: 1px solid pink;
-        line-height: 27px;
-        text-align: center;
-        color: black;
-        @include WidthHeight(48px, 27px);
-
-        &:hover {
-            background-color: red;
-        }
-    }
-}
-
-#center {
-    border-left: 1px solid pink;
-    border-right: 1px solid pink;
+    @include WidthHeight(1000px, 475px);
 }
