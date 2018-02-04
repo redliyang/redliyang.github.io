@@ -1,1 +1,2 @@
 cnpm install
+gulp
