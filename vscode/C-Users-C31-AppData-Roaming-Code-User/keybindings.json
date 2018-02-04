@@ -1,0 +1,11 @@
+// 将键绑定放入此文件中以覆盖默认值
+[
+    {
+        "key": "shift+alt+a",
+        "command": "git.commitAll"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "git.push"
+    }
+]

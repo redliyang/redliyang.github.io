@@ -1,0 +1,38 @@
+{
+	"Print to console": {
+		"prefix": "clg",
+		"body": [
+			"console.log($1)$2"
+		],
+		"description": "Log output to console"
+	},
+	"for statement": {
+		"prefix": "for",
+		"body": [
+			"for (var i = 0, len = $1; i < len; i++) {",
+			"   $2",
+			"}"
+		],
+		"description": "my for snippet"
+	},
+	"jteach statement": {
+		"prefix": "jteach",
+		"body": [
+			"jQuery.each(this, (key, dom) => {",
+			"    const self = dom",
+			"    $1",
+			"})"
+		],
+		"description": "my jteach snippet"
+	},
+	"joeach statement": {
+		"prefix": "joeach",
+		"body": [
+			"jQuery.each($1, ($2, $3) => {",
+			"    const $4 = $3",
+			"    $5",
+			"})"
+		],
+		"description": "my joeach snippet"
+	}
+}

@@ -1,0 +1,18 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "sync.gist": "d954955819427e0b19b83d7f48aabee1",
+    "sync.lastUpload": "2018-02-04T07:37:25.521Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false
+}
