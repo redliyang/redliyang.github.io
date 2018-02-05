@@ -9,7 +9,7 @@ module.exports = () => ({
         'wallaby/test/helper/template.js',
     ],
     tests: [
-        'src/js/*.js',
+        'src/js/demo.js',
     ],
     debug: true,
 })
