@@ -1,6 +1,10 @@
+$('input').on("keyup", function (e) {
+    console.log(2)
+    if (e.keyCode === 13) {
+        $(this).next().next().focus()
+    }
+})
 
-// $(docoment).ready(() => {
-//     console.log(1)
-// })
-
-console.log($ === jQuery)
+$("input").on('mouseenter', function (e) {
+    $(this).select()
+})

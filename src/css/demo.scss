@@ -33,44 +33,21 @@ $hoverColor: #fafafa !default;
 // }
 
 
-.wrapper {
-    @include WidthHeight(1000px, 475px);
-}
-
-.wrapper .tab {
-    @include WidthHeight(320px, 36px);
-    border: 1px solid #ddd;
-    border-bottom: 0;
-    .tab-item {
-        @include textCenter(80px, 34px);
-        position: relative;
-        float: left;
-        cursor: pointer;
-        border-top: 4px solid #fff;
-        .slide {
-            @include poaTopRight(10px, 0);
-            @include WidthHeight(1px, 14px);
-            background: #ddd;
-            overflow: hidden;
+.parentWrap {
+    width: 200px;
+    .menuGroup {
+        border: 1px solid #999;
+        .groupTitle {
+            display: block;
+            @include textCenter(200px,20px);
+            background-color: red;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .cont {
+            display: none;
+            @include textCenter(200px, 200px);
         }
     }
-}
-
-.wrapper .tab .tab-item.active {
-    border-bottom: 0;
-    border-color: red;
-}
-
-.wrapper .products {
-    @include WidthHeight(998px, 456px);
-    border: 1px solid #ddd;
-    background-color: blue;
-    .main {
-        float: left;
-        display: none;
-    }
-}
-
-.wrapper .products .mian.selected {
-    display: block;
 }
