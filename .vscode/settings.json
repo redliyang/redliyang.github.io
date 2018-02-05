@@ -34,17 +34,4 @@
         "package.json": true
     },
     "files.trimFinalNewlines": true,
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.showSuggestionsAsSnippets": true,
-    "editor.snippetSuggestions": "top",
-    "editor.formatOnPaste": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.iconTheme": "vscode-icons",
-    "git.enableSmartCommit": true,
-    "git.autofetch": true
 }
