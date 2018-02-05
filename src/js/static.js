@@ -1,18 +1,16 @@
 $.extend({
+
     // 遍历对象或类数组
     each(obj, fn) {
-        let i
-        let len
-        let key
-
+        
         if (jQuery.isLikeArray(obj)) {
-            for (i = 0, len = obj.length; i < len; i += 1) {
+            for (let i = 0, len = obj.length; i < len; i += 1) {
                 if (fn.call(obj[i], i, obj[i]) === false) {
                     break
                 }
             }
         } else {
-            for (key in obj) {
+            for (const key in obj) {
                 if (fn.call(obj[key], key, obj[key]) === false) {
                     break
                 }
@@ -24,37 +22,20 @@ $.extend({
 
     // map实现
     map(obj, fn) {
-        let i
-        let len
-        let key
-        let result = []
+        
+        const result = []
 
         if ('length' in obj) {
-            for (i = 0, len = obj.length; i < len; i++) {
+            for (let i = 0, len = obj.length; i < len; i += 1) {
                 result.push(fn.call(obj[i], obj[i], i))
             }
         } else {
-            for (key in obj) {
+            for (const key in obj) {
                 result.push(fn.call(obj[key], obj[key], key))
             }
         }
 
         return result
-    },
-
-    // 去掉首尾空白字符
-    trim(str) {
-        // null、undefined、NaN、0、false、''
-        if (!str) {
-            return str
-        }
-
-        // 优先使用原生的
-        if (str.trim) {
-            return str.trim()
-        }
-
-        return str.replace(/^\s+|\s+$/g, '')
     },
 
     // 判断是不是html片段
@@ -88,6 +69,7 @@ $.extend({
 
     // 判断是不是真数组或伪数组
     isLikeArray(arr) {
+
         // Function、window、!Object
         if (jQuery.isFunction(arr) || jQuery.isWindow(arr) || !jQuery.isObject(arr)) {
             return false
@@ -107,21 +89,40 @@ $.extend({
     },
 
     ready(fn) {
+
         // DOM已经构造完毕，fn可以直接执行
-        // 如果DOM没有构造完毕，那么判断addEventListener是否兼容
-        // 如果不兼容addEventListener，那么采取attachEvent的方式，
-        // 同时事件变为了onreadystatechange，为了防止这个事件多次触发造成的fn多次执行，
-        // 所以需要一个包装函数来进行过滤。
         if (document.readyState === 'complete') {
             fn()
-        } else if (document.addEventListener) {
+        } 
+
+        // 主流浏览器
+        else if (document.addEventListener) {
             document.addEventListener('DOMContentLoaded', fn)
-        } else {
+        } 
+        
+        // IE8
+        else {
             document.attachEvent('onreadystatechange', () => {
                 if (document.readyState === 'complete') {
                     fn()
                 }
             })
         }
+    },
+
+    // 去掉首尾空白字符
+    trim(str) {
+        
+        // null、undefined、NaN、0、false、''
+        if (!str) {
+            return str
+        }
+
+        // 优先使用原生的
+        if (str.trim) {
+            return str.trim()
+        }
+
+        return str.replace(/^\s+|\s+$/g, '')
     },
 })
