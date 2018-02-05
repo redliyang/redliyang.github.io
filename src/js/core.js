@@ -86,3 +86,5 @@
     // 暴露工厂和工厂的简称
     w.jQuery = w.$ = jQuery
 }(window))
+
+console.log(1)
