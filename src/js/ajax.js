@@ -31,7 +31,7 @@ $.extend({
     processOptions(options) {
         // 合并用户和默认的配置项，得到一份新的
         const optionsNew = {}
-        jQuery.extend(optionsNew, jQuery.ajaxSettings, options)
+        jQuery.rong(optionsNew, jQuery.ajaxSettings, options)
 
         // 对data进行加工处理
         optionsNew.data = jQuery.urlStringify(options.data)
@@ -162,4 +162,3 @@ $.extend({
         })
     },
 })
-

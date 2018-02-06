@@ -125,4 +125,21 @@ $.extend({
 
         return str.replace(/^\s+|\s+$/g, '')
     },
+
+    // 把第二项以后的对象继承到第一项
+    rong() {
+        
+        const target = arguments[0]
+
+        // 遍历得到后面所有的对象
+        for (let i = 1; i < arguments.length; i += 1) {
+            // 遍历每一个对象所有的属性
+            for (const key in arguments[i]) {
+                target[key] = arguments[i][key]
+            }
+        }
+        
+        // 给谁混入返回谁
+        return target
+    },
 })
